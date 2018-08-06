@@ -48,14 +48,14 @@
 * Madeleine Tabing
 * Kristina Tong
 
-## Wednesday, Sept 10, 2018
+## Monday, Sept 10, 2018
 
 * Marissa Orea
 * Michael Coleman
 * Olivia Tian
 * Parker Dinsmore
 
-## Thursday, Sept 12, 2018
+## Wednesday, Sept 12, 2018
 
 * Richard Chen
 * Yan Wang
@@ -104,21 +104,21 @@
 * Jesse McReady
 * Yixuan Wang
 
-## Tuesday, Oct 17, 2018
+## Wednesday, Oct 17, 2018
 
 * JUN JIAN SHEN
 * Justin Wang
 * Madeleine Tabing
 * Kristina Tong
 
-## Wednesday, Oct 22, 2018
+## Monday, Oct 22, 2018
 
 * Marissa Orea
 * Michael Coleman
 * Olivia Tian
 * Parker Dinsmore
 
-## Thursday, Oct 24, 2018
+## Wednesday, Oct 24, 2018
 
 * Richard Chen
 * Yan Wang
