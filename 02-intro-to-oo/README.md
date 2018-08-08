@@ -14,7 +14,7 @@
 * Call methods on the implicit or explicit `self`
 * Define attribute readers and writers using `attr_` macros
 * Get more practice with array compositions (`each`, `map`, `select`/`filter`)
-* Explain the need for variable scope and why it's important to not utilize global variables
+
 
 
 
