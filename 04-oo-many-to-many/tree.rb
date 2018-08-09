@@ -30,13 +30,4 @@ class Tree
     squirrels_in_tree.count
   end
 
-
-
-
-  #   squirrel_nests = my_nests.select do |nest|
-  #     nest.squirrel == squirrel_object
-  #   end
-  #   squirrel_nests.count
-  # end
-
 end # end Tree class
