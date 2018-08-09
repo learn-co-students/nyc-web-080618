@@ -18,17 +18,11 @@ class Tree
   end
 
 ## Tree has how many squirrels?
-  def squirrel_nests(squirrel_object)
-    my_nests.select do |nest|
+  def squirrel_count(squirrel_object)
+    squirrel_nests = my_nests.select do |nest|
       nest.squirrel == squirrel_object
     end
+    squirrel_nests.count
   end
-
-  def squirrel_count(squirrel_object)
-    squirrel_nests(squirrel_object).count
-  end
-
-
-
 
 end # end Tree class
