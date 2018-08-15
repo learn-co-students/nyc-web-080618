@@ -1,0 +1,15 @@
+require_relative './config/environment'
+require 'sinatra/activerecord/rake'
+
+desc "Start our console"
+task :console do
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  Pry.start
+end
+
+
+namespace :pizza do
+  task :hut do
+    puts "EXTRA LARGE PIZZA"
+  end
+end
