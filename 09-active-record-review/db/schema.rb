@@ -10,12 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_153926) do
+ActiveRecord::Schema.define(version: 2018_08_20_210249) do
+
+  create_table "dog_walkers", force: :cascade do |t|
+    t.integer "dog_id"
+    t.integer "walker_id"
+  end
+
+  create_table "dogs", force: :cascade do |t|
+    t.string "name"
+    t.string "breed"
+    t.integer "owner_id"
+  end
 
   create_table "nests", force: :cascade do |t|
     t.string "name"
     t.integer "squirrel_id"
     t.integer "tree_id"
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string "family_name"
   end
 
   create_table "squirrels", force: :cascade do |t|
@@ -25,6 +40,11 @@ ActiveRecord::Schema.define(version: 2018_08_20_153926) do
   create_table "trees", force: :cascade do |t|
     t.string "name"
     t.string "kind"
+  end
+
+  create_table "walkers", force: :cascade do |t|
+    t.string "name"
+    t.integer "rating"
   end
 
 end
