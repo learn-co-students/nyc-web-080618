@@ -1,10 +1,13 @@
+require 'pry'
 require_relative 'song'
 
 class App
-  def call(environment_hash)
+  def call(env)
     # TODO: create some new songs
+    puts env
+    binding.pry
 
-    req = Rack::Request.new(environment_hash)
+    req = Rack::Request.new(env)
     resp = Rack::Response.new
 
     if req.path =~ /songs/
