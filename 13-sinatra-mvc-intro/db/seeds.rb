@@ -1,1 +1,1 @@
-GoogleBooks::Adapter.new("AUTHOR_NAME").fetch_books
+GoogleBooks::Adapter.new("ernest hemingway").fetch_books
