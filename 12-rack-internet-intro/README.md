@@ -155,6 +155,7 @@ Now we can inspect the path with `req.path`, use conditionals to respond to diff
 - [RestClient––ruby gem that allows us to make HTTP requests](https://github.com/rest-client/rest-client)
 - [Zuckerberg Explains the Internet to Congress](https://www.youtube.com/watch?v=ncbb5B85sd0)
 - [How the Internet Works in 5 Minutes](https://www.youtube.com/watch?v=7_LPdttKXPc)
+- [How does HTTPS Work? Comic](https://howhttps.works/)
 - [History of Submarine Cables](https://www.youtube.com/watch?v=Ve810FHZ1CQ)
 - Map of submarine cables:
 - ![underwater cable map](https://i.redd.it/eo6248sth0pz.png)

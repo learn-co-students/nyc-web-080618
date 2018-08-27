@@ -1,3 +1,11 @@
+# module Rack
+#   class Request
+#     def initialize(env_hash)
+#       @env_hash = env_hash
+#     end
+#   end
+# end
+
 require 'pry'
 require_relative 'song'
 
@@ -10,8 +18,13 @@ class App
     req = Rack::Request.new(env)
     resp = Rack::Response.new
 
+    Song.new('single ladies')
+    Song.new('hello')
+    Song.new('dreams')
+    Song.new('go your own way')
+
     if req.path =~ /songs/
-      song_list_items = Song.all.map { |song| "<li>#{song.name}</li>" }.join
+      song_list_items = Song.all.map { |song| "<li>#{song.title}</li>" }.join
 
       resp.write("
           <h1>Songs List</h1>
