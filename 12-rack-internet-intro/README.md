@@ -147,6 +147,7 @@ Now we can inspect the path with `req.path`, use conditionals to respond to diff
 
 - [First Webpage Published by Tim Berners-Lee](https://www.w3.org/History/19921103-hypertext/hypertext/WWW/TheProject.html)
 - [URI \(uniform resources identifier\)](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)
+- [URI vs URL](https://stackoverflow.com/questions/176264/what-is-the-difference-between-a-uri-a-url-and-a-urn)
 - [HTTP \(Hypertext Transfer Protocol\)](https://www.w3schools.com/tags/ref_httpmethods.asp)
 - [HTTP Status Rappers](http://httpstatusrappers.com/)
 - [DNS lookup](https://en.wikipedia.org/wiki/Domain_Name_System)
