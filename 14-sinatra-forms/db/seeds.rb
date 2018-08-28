@@ -1,1 +1,1 @@
-GoogleBooks::Adapter.new("arthur miller").fetch_books
+GoogleBooks::Adapter.new("neil gaiman").fetch_books
