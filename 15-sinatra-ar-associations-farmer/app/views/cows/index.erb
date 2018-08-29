@@ -1,5 +1,10 @@
 <h1>Cow INDEX</h1>
 
 <% @cows.each do |cow| %>
-  <p><%= cow.name %></p>
+  <p><%= cow.name %>
+    <form action="/cows/<%= cow.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">Delete Cow</button>
+    </form>
+  </p>
 <% end %>

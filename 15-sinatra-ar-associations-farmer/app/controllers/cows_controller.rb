@@ -17,4 +17,11 @@ class CowsController < ApplicationController
     )
     redirect '/cows'
   end
+
+  delete '/cows/:id' do
+    # params-> {_method: 'delete', cow_id: '1'}
+    # find and destroy the cow based on id sent in params
+    Cow.find(params[:id]).destroy
+    redirect '/cows'
+  end
 end
