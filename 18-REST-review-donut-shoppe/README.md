@@ -8,6 +8,7 @@
   - `rails g controller Donuts`. This will give us an empty views folder and a `DonutsController`
   - `rails g model Donut name sprinkles:boolean filling:string tasty:boolean`. This will create a migration and a model
     for us.
+  - We'd then have to manually add the RESTful routes to `config/routes.rb`
 
 ---
 
