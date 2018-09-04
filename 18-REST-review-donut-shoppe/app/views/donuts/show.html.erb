@@ -1,0 +1,8 @@
+<h1>Donut Show Page for <%= @donut.name %></h1>
+
+<!-- button_to takes as args IN ORDER: the string the user will see in the button
+THE PATH/ACTION that our form will use,
+hash of options
+ -->
+
+<%= button_to("Delete #{@donut.name}", "/donuts/#{@donut.id}", { method: :delete}) %>
