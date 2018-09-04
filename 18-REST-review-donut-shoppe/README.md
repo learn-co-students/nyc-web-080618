@@ -1,24 +1,36 @@
-# README
+# Rails Review Donut Shoppe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Create our donuts: `rails g resource Donut name sprinkles:boolean filling tasty:boolean`
 
-Things you may want to cover:
+  - `resource` gives us: a migration, a model, a controller, RESTful routes, and an empty views folder
 
-* Ruby version
+---
 
-* System dependencies
+- Forms
+- REST: What should our routes be? How should I be thinking about my routes.
 
-* Configuration
+---
 
-* Database creation
+### MVC Architecture:
 
-* Database initialization
+![](/mvc_request.jpg)
 
-* How to run the test suite
+---
 
-* Services (job queues, cache servers, search engines, etc.)
+### Mapping HTTP Verbs to CRUD and SQL:
 
-* Deployment instructions
+![](/http_crud.jpg)
 
-* ...
+---
+
+### RESTful Routes:
+
+![](/RESTful_routes.png)
+
+---
+
+### External Resources:
+
+- [Rails Docs on Generators](https://guides.rubyonrails.org/command_line.html#rails-generate)
+- [Rails Docs on Routing](https://guides.rubyonrails.org/routing.html#resource-routing-the-rails-default)
+- [Restular](http://www.restular.com/)
