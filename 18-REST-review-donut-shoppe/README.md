@@ -13,19 +13,19 @@
 
 ### MVC Architecture:
 
-![](/18-REST-review-donut-shoppe/mvc_request.jpg)
+![](https://github.com/learn-co-students/nyc-web-080618/raw/master/18-REST-review-donut-shoppe/mvc_request.jpg)
 
 ---
 
 ### Mapping HTTP Verbs to CRUD and SQL:
 
-![](/18-REST-review-donut-shoppe/http_crud.jpg)
+![](https://github.com/learn-co-students/nyc-web-080618/raw/master/18-REST-review-donut-shoppe/http_crud.jpg)
 
 ---
 
 ### RESTful Routes:
 
-![](/18-REST-review-donut-shoppe/RESTful_routes.png)
+![](https://github.com/learn-co-students/nyc-web-080618/raw/master/18-REST-review-donut-shoppe/RESTful_routes.png)
 
 ---
 
