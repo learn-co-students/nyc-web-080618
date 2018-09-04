@@ -13,19 +13,19 @@
 
 ### MVC Architecture:
 
-![](/mvc_request.jpg)
+![](/18-REST-review-donut-shoppe/mvc_request.jpg)
 
 ---
 
 ### Mapping HTTP Verbs to CRUD and SQL:
 
-![](/http_crud.jpg)
+![](/18-REST-review-donut-shoppe/http_crud.jpg)
 
 ---
 
 ### RESTful Routes:
 
-![](/RESTful_routes.png)
+![](/18-REST-review-donut-shoppe/RESTful_routes.png)
 
 ---
 
