@@ -157,7 +157,7 @@ User.create([{name: 'billybob'}, {name: 'jimmy carter'}, {name: 'angelina jolie'
 
 [Collection select](https://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select) is looking for the following in order:
 
-1.  the method we want to call on `@post:` user_id
+1.  the method we want to call on `@post`––user_id
 2.  the collection we want to use to populate our dropdown with: `User.all`
 3.  the value method; what will show up in our params and as a value in our `<option>` tags: `user_instance.id`
 4.  the text method; what will show up inside the option tag, what will the user see? `user_instance.name`
