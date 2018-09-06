@@ -1,0 +1,2 @@
+class LawbreakersController < ApplicationController
+end

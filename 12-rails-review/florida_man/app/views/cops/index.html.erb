@@ -1,0 +1,10 @@
+<h1> dat COP Index doe</h1>
+
+
+<ul><% @cops.each do |cop|%>
+  <li><%= link_to cop.name, cop_path(cop) %> </li>
+
+<% end %>
+</ul>
+
+<%= button_to "MAKE a cop", new_cop_path, {method: :get} %>

@@ -1,0 +1,11 @@
+<h1> SHOWOWWW ME THE $$$</h1>
+
+
+<p> name:  <%= @cop.name %> </p>
+<p> rank: <%= @cop.rank %></p>
+<p> CRIMES:<% @cop.arrests.each do |arrest| %>
+   <%= arrest.crime%>
+<% end %> </p>
+
+
+<%= button_to("Delete #{@cop.name}", cop_path(@cop), { method: :delete, data: {confirm: 'are you sure?' } }) %>
