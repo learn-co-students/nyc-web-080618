@@ -1,0 +1,14 @@
+<h1>Create a New Book</h1>
+
+<!-- Method is HTTP VERB -->
+<!-- ACTION is WHERE (endpoint) we want to send this to -->
+
+<form action="/books" method="post">
+  <label for="title">Title</label>
+    <input type="text" name="title" placeholder="title" value="">
+  <br>
+  <label for="snippet">Snippet</label>
+    <textarea name="snippet" placeholder="snippet"></textarea>
+
+  <button type="submit">Create New Book</button>
+</form>

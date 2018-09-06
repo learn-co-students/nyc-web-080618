@@ -1,0 +1,24 @@
+<h1>Create a New Cow</h1>
+
+<form action="/cows" method="post">
+  <label for="name">Cow Name</label>
+  <input type="text" name="name" value="">
+  <br>
+  <label for="weight">Cow Weight</label>
+  <input type="number" name="weight">
+  <br>
+  <select name="farmer_id">
+
+    <% @farmers.each do |farmer| %>
+    <!-- i want to create an option (DROPDOWN ITEM) for each farmer in the db -->
+      <option value="<%= farmer.id %>">
+        <%= farmer.name %>
+      </option>
+    <% end %>
+
+  </select>
+
+  <!-- in order to associate a cow with a farmer, i need all of the farmers in my db, then i need to create a dropdown menu with that data -->
+
+  <button type="submit">Create New Cow</button>
+</form>

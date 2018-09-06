@@ -1,0 +1,18 @@
+<h1>
+  Details for <%= @book.title %>
+</h1>
+
+<p><%= @book.snippet %></p>
+
+<a href="/books/<%= @book.id %>/edit">
+  <button>Edit <%= @book.title %></button>
+</a>
+
+<br>
+<br>
+<!-- I need to somehow send a delete request to /books/:id -->
+
+<form action="/books/<%= @book.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete this Book</button>
+</form>

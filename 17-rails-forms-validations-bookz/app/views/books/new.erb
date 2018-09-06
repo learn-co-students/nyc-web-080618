@@ -1,0 +1,22 @@
+<h1>Create a New Book!</h1>
+<!-- @book.errors.any? returns a boolean -->
+<% if @book.errors.any? %>
+<!-- @book.errors.full_messages returns an ARRAY of strings [ "Title cannot be blank" ] -->
+  <% @book.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+<% end %>
+
+<%= form_for @book do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+<br>
+  <%= f.label :snippet %>
+  <%= f.text_area :snippet %>
+<br>
+  <%= f.label "Number of Pages" %>
+  <%= f.number_field :num_pages %>
+<br>
+
+  <%= f.submit %>
+<% end %>
