@@ -1,0 +1,21 @@
+<%= form_for @user do |f| %>
+  <p><%= @user.errors.count %> prevented signup</p>
+
+  <ol>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
+  <%= f.label :avatar %>
+  <%= f.text_field :avatar %>
+
+  <%= f.submit %>
+
+<% end %>
