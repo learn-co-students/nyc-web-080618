@@ -1,9 +1,13 @@
 <h1>Menu</h1>
 
-<h3>U Created A Nacho lol</h3>
+<h3><%= flash[:notice] %></h3>
 
 <h4>Your Cart: </h4>
+
 <ol>
+  <% @cart_items.each do |item| %>
+    <li><%= item.name %></li>
+  <% end %>
 </ol>
 
 <hr>
@@ -13,7 +17,15 @@
     <li>
       <%= link_to nacho.name, nacho %>
       $<%= nacho.price %>
-      <%= button_to "Add To Cart" %>
+      <%=
+        button_to(
+        "Add To Cart",
+        edit_cart_path,
+        {
+          method: :patch,
+          params: { nacho_id: nacho.id, nacho_name: nacho.name }
+        })
+      %>
     </li>
   </ul>
 <% end %>
