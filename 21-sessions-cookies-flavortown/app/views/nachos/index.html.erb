@@ -1,0 +1,19 @@
+<h1>Menu</h1>
+
+<h3>U Created A Nacho lol</h3>
+
+<h4>Your Cart: </h4>
+<ol>
+</ol>
+
+<hr>
+
+<% @nachos.map do |nacho| %>
+  <ul>
+    <li>
+      <%= link_to nacho.name, nacho %>
+      $<%= nacho.price %>
+      <%= button_to "Add To Cart" %>
+    </li>
+  </ul>
+<% end %>
