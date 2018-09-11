@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -18,6 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.valid?
+      session[:user_id] = @user.id #login user when they sign up
       flash[:notice] = "Sign Up Successful! Welcome, #{@user.username}!"
       # redirect_to user_path(@user)
       redirect_to @user
@@ -28,7 +30,12 @@ class UsersController < ApplicationController
 
   def edit
     # set_user is called with before_action; @user is already set
-    render :edit
+    if current_user.id == @user.id
+      render :edit
+    else
+      flash[:notice] = "You are not authorized to see this"
+      redirect_to @user
+    end
   end
 
   def update

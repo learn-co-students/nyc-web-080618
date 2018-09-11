@@ -4,6 +4,11 @@
 
 <ol>
   <% @users.each do |usr| %>
-    <li><%= link_to(usr.username, usr)%></li>
+    <li>
+      <%= link_to(usr.username, usr) %>
+    </li>
   <% end %>
 </ol>
+
+
+<%= link_to("Sign Up", new_user_path) %>

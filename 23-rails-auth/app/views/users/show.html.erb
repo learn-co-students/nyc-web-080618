@@ -4,10 +4,14 @@
 
 <%= image_tag @user.avatar %>
 
-
-<hr>
-<%= button_to "Delete Account", @user, method: :delete %>
-
 <br>
 
-<%= button_to "Edit Account", edit_user_path(@user), method: :get %>
+<% if current_user.id == @user.id %>
+  <hr>
+  <%= button_to "Delete Account", @user, method: :delete %>
+  <br>
+  <%= button_to "Edit Account", edit_user_path(@user), method: :get %>
+  <br>
+<% end %>
+
+<%= link_to "Back to All Users", users_path %>
