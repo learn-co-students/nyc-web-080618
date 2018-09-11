@@ -10,8 +10,8 @@
 - Discuss different encryption and hashing schemes, and `bcrypt` specifically
   - Do we want to ever store plaintext user passwords? (no)
 - Augment a user model in rails using `bcrypt`, `password_digest`, and `has_secure_password`
-- Expose this information in a sample rails app
-- Go over sessions, cookies, and implement sign up, log in, and log out
+- Build User sign up and sign in flows in Rails
+- Review sessions and cookies, as well as implement sign up, log in, and log out
 
 ## Steps
 
@@ -28,17 +28,26 @@ piece of information.
 ##### What is authentication?
 
 It boils down to a really interesting question: _Are you who you say you are?_ And we use the username/password as a
-proxy for that.
+proxy for that. This is called [multi-factor authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication):
+a method for confirming a user's identity via multiple pieces (factors) of identification, such as a username/password
+that only the user has. Ideally, our users provide unique passwords for each site they sign up for and don't use
+[common passwords](https://www.huffingtonpost.com/entry/2016-most-common-passwords_us_587f9663e4b0c147f0bc299d), but
+that's not always the case.
 
 ##### What is the difference between Authentication and Authorization?
 
 Authorization happens after authentication. It's about scope, and specific information. _What is the user allowed to
-see/interact with?_; what is the user **authorized** to see.
+see/interact with?_; what is the user **authorized** to see? Simply proving your identity does not mean you have
+unlimited power or authority; providing my driver's license to the TSA may prove my identity but it doesn't mean I'm
+**authorized** to fly the plane.
+
+![POWER! UNLIMITED POWER](https://media.giphy.com/media/hokMyu1PAKfJK/giphy.gif)
+
+---
 
 ##### How do passwords work?
 
-Do websites save our passwords? And if they do, how are they stored? Should a plaintext password ever be stored? **NO!**
-More on this later.
+Do websites save our passwords? And if they do, how are they stored? Should a plaintext password ever be stored?
 
 ##### What is the difference between hashing and encrypting?
 
@@ -196,8 +205,8 @@ work.
 _Remember, convention over configuration._ And especially in this case, we generally don't have the time or energy to
 build our own encryption that surpasses what already exists.
 
-After installing the `bcrypt` gem, you can use a macro in your user model called `has_secure_password`, which does a lot
-of the integration for you. Go in and test this in the console. You can show how the `user` model ends up with a
+After installing the `bcrypt` gem, you can use a macro in your `user` model called `has_secure_password`, which does a
+lot of the integration for you. Go in and test this in the console. You can show how the `user` model ends up with a
 `password_digest` attribute even though you send in `password` through the `create`. Do it again, this time with a
 `password_confirmation` in the initialization hash. You can show how rails rejects the transaction.
 
@@ -297,7 +306,7 @@ existence of the username, and the password match. Still, it's helpful to use `f
 
 `sessions/new.html.erb`
 
-Use a `form_tag` instead of a `form_for` here, we don't have a model to couple the form with.
+Use a `form_tag` instead of a `form_for` here, since we don't have a model to couple the form with.
 
 _All forms need an action and a method, and here the action is `/sessions`._
 
@@ -321,7 +330,13 @@ This allows us to save the user_id in the session cookie. `session` persists acr
 and `flash` works just between 2 requests.
 
 Show how this works and filter's the song by user (when logged in). However, you don't want to do this work over and
-over again. Where can you do this? `ApplicationController`!
+over again. Where can you do this? `ApplicationController`! Recall that all controllers inherit from
+`ApplicationController`:
+
+```ruby
+class UsersController < ApplicationController
+end
+```
 
 `application_controller.rb`
 
@@ -397,6 +412,8 @@ Finally, in `application.html.erb`:
 
 ## External Resources:
 
+- [Multi-factor Authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication)
+- [Huffington Post List of Common Passwords](https://www.huffingtonpost.com/entry/2016-most-common-passwords_us_587f9663e4b0c147f0bc299d)
 - [BCrypt gem on github](https://github.com/codahale/bcrypt-ruby#why-you-should-use-bcrypt)
 - [BCrypt Password class source code](https://github.com/codahale/bcrypt-ruby/blob/master/lib/bcrypt/password.rb#L23)
 - [Rails Docs on security](https://guides.rubyonrails.org/security.html#sessions)
