@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @users = User.all
+    render :index
+  end
+
   def show
     render :show
   end
@@ -39,7 +44,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     flash[:notice] = "Account for #{@user.username} deleted 😭"
-    redirect_to new_user_path
+    redirect_to(users_path)
   end
 
   private

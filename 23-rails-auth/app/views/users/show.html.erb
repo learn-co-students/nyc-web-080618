@@ -4,7 +4,10 @@
 
 <%= image_tag @user.avatar %>
 
-<hr>
 
 <hr>
 <%= button_to "Delete Account", @user, method: :delete %>
+
+<br>
+
+<%= button_to "Edit Account", edit_user_path(@user), method: :get %>

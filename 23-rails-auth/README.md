@@ -419,4 +419,3 @@ Finally, in `application.html.erb`:
 - [BCrypt gem on github](https://github.com/codahale/bcrypt-ruby#why-you-should-use-bcrypt)
 - [BCrypt Password class source code](https://github.com/codahale/bcrypt-ruby/blob/master/lib/bcrypt/password.rb#L23)
 - [Rails Docs on security](https://guides.rubyonrails.org/security.html#sessions)
-- [Rails Docs on has_and_belongs_to_many](https://guides.rubyonrails.org/association_basics.html#the-has-and-belongs-to-many-association)

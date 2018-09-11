@@ -1,0 +1,9 @@
+<h1>All Users</h1>
+
+<h3><%= flash[:notice] %></h3>
+
+<ol>
+  <% @users.each do |usr| %>
+    <li><%= link_to(usr.username, usr)%></li>
+  <% end %>
+</ol>
