@@ -160,7 +160,9 @@ end
 
 ```ruby
 class User < ApplicationRecord
-  attr_accessor :password
+  def password=(plaintext_password) #should take plaintext pw and store the digested result in db as password_digest attr
+    self.password_digest = BCrypt::Password.create(plaintext_password)
+  end
 
   def authenticate(plaintext_password)
     if BCrypt::Password.new(self.password_digest) == plaintext_password
