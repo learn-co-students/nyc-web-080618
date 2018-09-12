@@ -1,0 +1,2 @@
+class BagelsController < ApplicationController
+end

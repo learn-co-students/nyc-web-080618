@@ -1,0 +1,23 @@
+<h1>Create a new Bakery</h1>
+
+
+<%= form_for @bakery do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  Bagels:
+  <ul>
+    <%= f.fields_for :bagels do |bagels_form| %>
+      <li>
+        <%= bagels_form.label :name %>
+        <%= bagels_form.text_field :name %>
+
+        <%= bagels_form.label :ingredients %>
+        <%= bagels_form.text_field :ingredients %>
+        ...
+      </li>
+    <% end %>
+  </ul>
+
+  <%= f.submit %>
+<% end %>

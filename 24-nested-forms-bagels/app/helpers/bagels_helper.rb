@@ -1,0 +1,2 @@
+module BagelsHelper
+end

@@ -1,0 +1,2 @@
+module BakeriesHelper
+end
