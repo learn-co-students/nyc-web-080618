@@ -47,6 +47,7 @@ say_name(name) # what will happen 🤔
 ```
 
 ---
+- Variable Scope in JavaScript: Lexical scope means that scope is defined by author-time decisions of where functions are declared. [From You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
 
 - Each scope is like its own 'bucket' in JavaScript––our variables live within a space and can reach out to an outer scope:
 
@@ -262,11 +263,11 @@ function eatPizza() {
 eatPizza() //inner pizza is pizza hut stuffed crust™️
 ```
 
-### Closures
+### First Class Functions and Closures
 
 - From the [MDN Article on First Class Functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function): A programming language is said to have First-class functions when functions in that language are treated like any other variable. For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
 
-  - Assigning functions to variables:
+- Assigning functions to variables:
 
 ```javascript
 var eatFood = function(food) {
@@ -316,41 +317,101 @@ const worksAsExpected = function() {
 worksAsExpected = function() {
   console.log('lol whoops')
 } //Uncaught TypeError: Assignment to constant variable.
-
 ```
 
-- First class functions
-- Functions that return functions (like any other value)
-- Closures as the natural outcome of first class functions and Lexical scope
-- Debugger and closures
+---
+
+- Passing functions to other functions as arguments **callbacks**
+
+```javascript
+function returnThinker() {
+  return 'NICE'
+}
+
+function logCallBack(callbackFn) {
+  console.log(`😱${callbackFn()}😱`)
+}
+
+
+logCallBack(returnThinker) //😱NICE😱
+```
 
 ---
 
-**First class functions**:
+- Functions that _return other functions_ 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
 
-- A programming language is said to have First-class functions when functions in that language are treated like any
-  other variable. For example, in such a language, a function can be passed as an argument to other functions, can be
-  returned by another function and can be assigned as a value to a variable.
-  [From MDN](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function)
+![🤔](https://media.giphy.com/media/3o7buirYcmV5nSwIRW/giphy.gif)
+
+```javascript
+function outerFn() {
+  return function innerFn() {
+    console.log('haha i am an inner function lol')
+  }
+}
+outerFn()() //haha i am an inner function lol
+```
+
+- Notice that we have to invoke **twice**. Look at the code above. `outerFn` returns a function. Invoking `outerFn` will return a reference to a function, `innerFn`. In order to call `innerFn`, we need to invoke the return value of `outerFn`, hence the `outerFn()()` syntax
+
+![](https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif)
 
 ---
 
-**Lexical scope**:
+- The same way that a function can return a string, object, array, or integer, a function can also return another function
+- According to the [MDN Article on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures), a _closure_ is the combination of a function and the lexical environment within which that function was declared:
 
-- Lexical scope means that scope is defined by author-time decisions of where functions are declared.
-  [From You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
+```javascript
+function closure() {
+  var cheese = 'cheddar'
+
+  return function() {
+    return `I like to eat ${cheese}`
+  }
+}
+
+closure() //function
+
+closure()() // "I like to eat cheddar"
+
+console.log(cheese) //Uncaught ReferenceError: cheese is not defined
+```
+
+- Notice that the inner function above has access to the local variable `cheese`, which is not accessible outside the lexical scope of the `closure` function.
+
+- From MDN: The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.
+
+---
+- This is one of the most powerful features of javascript and one of the reasons why the language is so amazing. We can write a function that can create _other functions_:
+
+```javascript
+function multiplyByN(outerNum) {
+  return function(n) {
+    return outerNum * n
+  }
+}
+
+const multiplyByTen = multiplyByN(10)
+const multiplyByFive = multiplyByN(5)
+const multiplyByTwo = multiplyByN(2)
+
+multiplyByTen(5) // 50
+multiplyByTen(10) // 100
+
+multiplyByFive(5) //25
+multiplyByFive(10) //50
+
+multiplyByTwo(2) //4
+multiplyByTwo(10) //20
+```
+
+- We've created one function to rule them all. `multiplyByN` allows us to construct other multiplying functions.
+
+![science](https://media.giphy.com/media/fqIBaMWI7m7O8/giphy.gif)
+
 
 ---
 
-**Closure**:
-
-- A closure is the combination of a function and the lexical environment within which that function was declared.
-  [From MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
-
-- Definition from
-  [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/31e1d4ff600d88cc2ce243903ab8a3a9d15cce15/scope%20%26%20closures/ch5.md):
-  Closure is when a function is able to remember and access its lexical scope even when that function is executing
-  outside its lexical scope.
+- As written in [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/31e1d4ff600d88cc2ce243903ab8a3a9d15cce15/scope%20%26%20closures/ch5.md), a closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
 
 ---
 
@@ -360,8 +421,10 @@ worksAsExpected = function() {
 - [MDN Article on Block Scope](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block)
 - [MDN Article on Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
 - [MDN Article on First Class Functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function)
+- [MDN Article on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [MPJ Video on Closures](https://www.youtube.com/watch?v=CQqwU2Ixu-U)
 - [Temporal Dead Zone](https://wesbos.com/temporal-dead-zone/)
+- [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
 - [You Don't Know JS Scope and Closures](https://github.com/getify/You-Dont-Know-JS/tree/31e1d4ff600d88cc2ce243903ab8a3a9d15cce15/scope%20%26%20closures)
 - [Air BnB JS StyleGuide](https://github.com/airbnb/javascript)
 
