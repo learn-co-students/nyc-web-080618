@@ -423,9 +423,9 @@ multiplyByTwo(10) //20
 - [MDN Article on First Class Functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function)
 - [MDN Article on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [MPJ Video on Closures](https://www.youtube.com/watch?v=CQqwU2Ixu-U)
-- [Temporal Dead Zone](https://wesbos.com/temporal-dead-zone/)
 - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
 - [You Don't Know JS Scope and Closures](https://github.com/getify/You-Dont-Know-JS/tree/31e1d4ff600d88cc2ce243903ab8a3a9d15cce15/scope%20%26%20closures)
+- [Temporal Dead Zone](https://wesbos.com/temporal-dead-zone/)
 - [Air BnB JS StyleGuide](https://github.com/airbnb/javascript)
 
 
