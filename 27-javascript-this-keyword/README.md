@@ -8,13 +8,13 @@
 - Leverage Ruby's `self` to frame our JS `this` conversation (will get us 40% of the way)
 - Recognize and value the differences
 - Understand how we might be able to leverage `this` in JavaScript
-- When is the value of `this` set? When it's **NOT** set?
+- When is the value of `this` set? When is it **NOT** set?
 
 ---
 
 ### Review of `self` in Ruby
 
-- There are _some_ similarities between `this` in JavaScript and `self` in Ruby. Looking at the similarities will get us closer to understanding JavaScript's `this`. **Please do not think of them as being the same thing, however**.
+- There are _some_ similarities between `this` in JavaScript and `self` in Ruby. Looking at the similarities will get us _closer_ to understanding JavaScript's `this`. **Please do not think of them as being the same thing, however**.
 
 ```ruby
 class Person
@@ -40,21 +40,36 @@ andy.name # => self will be the instance
 
 ---
 
+### `self` is NOT `this`
+
+- The `this` keyword in JavaScript, much like the English word "this", is entirely contextual. If I'm eating a bowl of soup and say, "I don't like this", "this" will refer to the soup I'm eating. If I'm taking the L train and say "I hate this", "this" will refer to the L. "This" is determined by the context in which it is used (at least in English).
+
+- `this` in JavaScript works much in the same way, but there are several _specific rules_ that determine how the meaning of `this` is resolved.
+
+---
+
+![](https://media.giphy.com/media/l46CbZ7KWEhN1oci4/giphy.gif)
+
+---
+
 ### The 4 JS environment rules that govern `this`
 
--  `this` within a function called with a context (i.e. `Object.method()`) will be the context/object:
+1.  `this` within a function called within a particular context (i.e. `Object.method()`) will be the context/object:
 
 ```javascript
-  const obj = {
-    method: function() {
+  const dog = {
+    name: 'winfield',
+    whatIsThis: function() {
       return this
     }
   }
 
-console.log(obj.method()) // obj
+dog.whatIsThis() //dog
 ```
 
--  `this` for a simple function call `fn()` will be the window (browser) or the global object (Node). If we are in strict mode this will be undefined for simple function calls
+---
+
+2.  `this` for a simple function call `fn()` will be the window object (browser) or the global object (Node). If we are in [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) `this` will be `undefined`. (**There are different rules for arrow functions that will be discussed later**)
 
 ```javascript
 function sayThis() {
@@ -63,7 +78,9 @@ function sayThis() {
 sayThis() //window
 ```
 
--  `this` within a function called with the keyword `new` in front will point to the newly created object:
+---
+
+3.  `this` within a function called with the keyword `new` in front will point to the newly created object:
 
 ```javascript
 function Person(name, favColor) {
@@ -76,7 +93,12 @@ andy //Person { name: 'andy', favColor: 'red' }
 typeof andy // "object"
 ```
 
-- `this` within a function called with `apply/call/bind` will be the object passed as the first parameter:
+  - Note that **we cannot use the `new` keyword for arrow functions**.
+  - Read this [MDN Article on the `new` operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) if you need a refresher on how `new` works.
+
+---
+
+4. `this` within a function called with `apply/call/bind` will be the object passed as the first parameter:
 
 ```javascript
 const personOne = { name: 'andy' }
@@ -105,7 +127,13 @@ console.log(sayName())
 //browser window says hello from undefined at undefined!
 ```
 
-- Arrow functions will maintain their lexical scope when evaluating `this`. In other words, `this` will be **whatever it was at the time of definition, not execution**. Unlike functions declared with the `function` keyword, arrow functions are much more predictable because `this` will not be dependent upon execution context:
+---
+
+- Arrow functions will maintain their lexical scope when evaluating `this`. In other words, `this` will be **whatever it was at the time of _definition_, not _execution_**.
+
+- Unlike functions declared with the `function` keyword, arrow functions are much more predictable because `this` will **not** be dependent upon _execution_ context
+
+- "An arrow function does not have its own `this`; the `this` value of the enclosing _lexical context_ is used i.e. Arrow functions follow the normal variable lookup rules. So while searching for `this` which is not present in current scope they end up finding `this` from its enclosing scope" - [MDN Article on Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ```javascript
 const thisArrow = {
@@ -113,23 +141,54 @@ const thisArrow = {
     return this
   }
 }
+
 thisArrow.sayThis() //window
 
+// remember, no block {} means an implicit return
 const sampleArrow = () => this
 sampleArrow() //window
 
-const boundArrow = sampleArrow.bind(personOne)
-boundArrow() //window
-// arrow functions resolve `this` at the moment of definition, NOT execution
 ```
 
-- "Until arrow functions, every new function defined its own this value (a new object in the case of a constructor, undefined in strict mode function calls, the base object if the function is called as an "object method", etc.). This proved to be less than ideal with an object-oriented style of programming." - [MDN Article on the `function` keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#No_separate_this)
+- Please note that we cannot, and should not, use `bind`, `call`, and `apply` on an arrow function. The purpose of these functions is to **fix** the value of `this` to a particular object. Arrow functions will already have `this` fixed to their lexical scope.
+
+- This makes arrow functions unsuitable for methods defined on an object:
+
+```javascript
+const angryChef = {
+  chefName: 'Chef Gordon Ramsay',
+  cookFood: (foodItem) => {
+    return `${this.chefName} is cooking ${foodItem}`
+  }
+}
+
+angryChef.cookFood('toast') //undefined is cooking toast
+```
+
+---
+
+- We can however leverage the lexical scoping of `this` if our object methods are higher order functions (return other functions):
+
+```javascript
+const dog = {
+  name: 'winfield',
+  eatLettuce: function() {
+    return () => `${this.name} is is eating lettuce! CHOMP! CRUNCH!`
+  }
+}
+
+dog.eatLettuce()() //"winfield is is eating lettuce! CHOMP! CRUNCH!"
+```
+
+![dog eating cabbage](https://media.giphy.com/media/WLbtNNR5TKJBS/giphy.gif)
 
 ---
 
 ## External Resources
 
+- [Strict Mode in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 - [MDN `this` article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+- [MDN `new` Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)
 - [MPJ JS This Keyword](https://www.youtube.com/watch?v=GhbhD1HR5vk)
 - [MDN Arrow Function Article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 - [MDN On Why Arrow Functions Help Us leverage `this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#No_separate_this)
