@@ -17,7 +17,7 @@ end
 
 say_name # what will happen 🤔
 
-undefined local variable or method `name` for main:Object (NameError)
+#=> undefined local variable or method `name` for main:Object (NameError)
 ```
 
 - However, if we make the variable global, or pass it in as an argument the code above will work:
@@ -49,7 +49,11 @@ say_name(name) # what will happen 🤔
 ---
 - Variable Scope in JavaScript: Lexical scope means that scope is defined by author-time decisions of where functions are declared. [From You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
 
-- Each scope is like its own 'bucket' in JavaScript––our variables live within a space and can reach out to an outer scope:
+- From the [MDN Article on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures): "The word 'lexical' refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope."
+
+- In other words, scope in JavaScript is determined by _where_ variables are defined in our code. There can also be a variety of scopes in our code, ranging from very local to global.
+
+- Each scope is like its own 'bucket' in JavaScript––our variables live within a space and can reach out to an outer scope. Think of scope as moving in one direction––functions can reach "up" to variables in their outer scope, but not the other way around:
 
 ```javascript
 var name = 'jon'
@@ -167,6 +171,8 @@ person = 'Carl' //Uncaught TypeError: Assignment to constant variable.
 const person = 'CARL' //Uncaught SyntaxError: Identifier 'carl' has already been declared
 
 ```
+
+- As a rule of thumb, if you're writing modern JavaScript ([ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_2015_support_in_Mozilla)), I would avoid using `var` because it can be redeclared and reassigned at any time, which can cause some unexpected and confusing bugs. Stick to `let` and `const`.
 
 ### Hoisting
 
@@ -319,28 +325,37 @@ worksAsExpected = function() {
 } //Uncaught TypeError: Assignment to constant variable.
 ```
 
+- Remember that functions are _just like any other object_ in JavaScript. I can assign a `String`, `Object`, `Array`, `Number`, etc to a variable. I can do the same thing with a `Function`
+
 ---
 
-- Passing functions to other functions as arguments **callbacks**
+- Functions can also be passed to other functions as arguments (this is because functions are first class objects). These are referred to as **callbacks**
+
+- From the [MDN Article on Callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function): "A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action."
 
 ```javascript
 function returnThinker() {
-  return 'NICE'
+  return '¿🤔?'
 }
 
 function logCallBack(callbackFn) {
-  console.log(`😱${callbackFn()}😱`)
+  console.log(callbackFn())
 }
 
 
-logCallBack(returnThinker) //😱NICE😱
+logCallBack(returnThinker) //'¿🤔?'
 ```
+
+- `logCallBack` is a function that is expecting **another function as an argument**. When `logCallBack` is invoked, it will simply `console.log` the return value of the callback passed in as an argument, which happens to be `returnThinker` in the example above.
+
+- `returnThinker` just returns `'🤔'`. So, when `logCallBack` is invoked with `returnThinker` as an argument, it will `console.log` `'¿🤔?'`
+
+![🤔](https://media.giphy.com/media/3o7buirYcmV5nSwIRW/giphy.gif)
 
 ---
 
 - Functions that _return other functions_ 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
 
-![🤔](https://media.giphy.com/media/3o7buirYcmV5nSwIRW/giphy.gif)
 
 ```javascript
 function outerFn() {
@@ -355,9 +370,12 @@ outerFn()() //haha i am an inner function lol
 
 ![](https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif)
 
+- Notice that the inner function has no name. This is referred to as an _anonymous function_ in JavaScript.
+
+
 ---
 
-- The same way that a function can return a string, object, array, or integer, a function can also return another function
+- The same way that a function can return a string, object, array, or integer, a function can also **_return another function_**. Again, this is because functions are first class objects in JavaScript just like _any other object_.
 - According to the [MDN Article on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures), a _closure_ is the combination of a function and the lexical environment within which that function was declared:
 
 ```javascript
@@ -380,7 +398,10 @@ console.log(cheese) //Uncaught ReferenceError: cheese is not defined
 
 - From MDN: The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.
 
+![x to the z xzibit on callbacks](https://kevhuang.com/content/images/2015/07/xzibit-loves-callbacks.png)
+
 ---
+
 - This is one of the most powerful features of javascript and one of the reasons why the language is so amazing. We can write a function that can create _other functions_:
 
 ```javascript
@@ -427,6 +448,7 @@ multiplyByTwo(10) //20
 - [You Don't Know JS Scope and Closures](https://github.com/getify/You-Dont-Know-JS/tree/31e1d4ff600d88cc2ce243903ab8a3a9d15cce15/scope%20%26%20closures)
 - [Temporal Dead Zone](https://wesbos.com/temporal-dead-zone/)
 - [Air BnB JS StyleGuide](https://github.com/airbnb/javascript)
+- [MDN Article on ES2015](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_2015_support_in_Mozilla)
 
 
 ![curly bois](https://i.imgur.com/ZwfLpVW.jpg)
