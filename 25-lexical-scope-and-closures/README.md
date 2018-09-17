@@ -176,7 +176,8 @@ const person = 'CARL' //Uncaught SyntaxError: Identifier 'carl' has already been
 
 ### Hoisting
 
-- While JavaScript is being compiled, memory is allocated to certain values prior to assignment. In other words, JavaScript will allocate memory to functions declared with the `function` keyword and with the `var` keyword will be declared (allocated memory) before your code is executed:
+- "Because variable declarations (and declarations in general) are processed before any code is executed, declaring a variable anywhere in the code is equivalent to declaring it at the top. This also means that a variable can appear to be used before it's declared. This behavior is called 'hoisting', as it appears that the variable declaration is moved to the top of the function or global code." - [MDN Article on `var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#var_hoisting)
+  - While JavaScript is being compiled, functions declared with the `function` keyword and variables declared with the `var` keyword are "hoisted" to the top of whatever scope they are in. **Declarations are not phyisically moved to the top of whatever scope they're in**. Instead, they are processed first (allocated memory) _then_ assigned a value.
 
 ```javascript
 bark() // 'woof'
@@ -220,9 +221,9 @@ console.log(dog) // undefined
 dog = 'penny' //assign a value to dog
 ```
 
-- While it may be helpful to imagine that the above is happening, javascript does not actually move variables around in your code.
+- While it may be helpful to imagine that the above is happening, **javascript does not actually move variables around in your code**.
 
-- From the [MDN Article on Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting): Conceptually, for example, a strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code.
+- From the [MDN Article on Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting): "Conceptually, for example, a strict definition of hoisting suggests that variable and function declarations are physically moved to the top of your code, but this is not in fact what happens. Instead, the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code."
 
 - However, if you declare the variable after it is used, but initialize it beforehand, it will return the value:
 
@@ -271,7 +272,7 @@ eatPizza() //inner pizza is pizza hut stuffed crust™️
 
 ### First Class Functions and Closures
 
-- From the [MDN Article on First Class Functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function): A programming language is said to have First-class functions when functions in that language are treated like any other variable. For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
+- From the [MDN Article on First Class Functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function): "A programming language is said to have First-class functions when functions in that language are treated like any other variable. For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable."
 
 - Assigning functions to variables:
 
@@ -348,13 +349,12 @@ logCallBack(returnThinker) //'¿🤔?'
 
 - `logCallBack` is a function that is expecting **another function as an argument**. When `logCallBack` is invoked, it will simply `console.log` the return value of the callback passed in as an argument, which happens to be `returnThinker` in the example above.
 
-- `returnThinker` just returns `'🤔'`. So, when `logCallBack` is invoked with `returnThinker` as an argument, it will `console.log` `'¿🤔?'`
 
 ![🤔](https://media.giphy.com/media/3o7buirYcmV5nSwIRW/giphy.gif)
 
 ---
 
-- Functions that _return other functions_ 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
+#### Functions that _return other functions_ 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
 
 
 ```javascript
@@ -376,6 +376,7 @@ outerFn()() //haha i am an inner function lol
 ---
 
 - The same way that a function can return a string, object, array, or integer, a function can also **_return another function_**. Again, this is because functions are first class objects in JavaScript just like _any other object_.
+
 - According to the [MDN Article on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures), a _closure_ is the combination of a function and the lexical environment within which that function was declared:
 
 ```javascript
@@ -396,7 +397,9 @@ console.log(cheese) //Uncaught ReferenceError: cheese is not defined
 
 - Notice that the inner function above has access to the local variable `cheese`, which is not accessible outside the lexical scope of the `closure` function.
 
-- From MDN: The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.
+- From [The MDN Article on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures): "The word 'lexical' refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope."
+
+- From [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/31e1d4ff600d88cc2ce243903ab8a3a9d15cce15/scope%20%26%20closures/ch5.md), "a closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope."
 
 ![x to the z xzibit on callbacks](https://kevhuang.com/content/images/2015/07/xzibit-loves-callbacks.png)
 
@@ -432,15 +435,12 @@ multiplyByTwo(10) //20
 
 ---
 
-- As written in [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/31e1d4ff600d88cc2ce243903ab8a3a9d15cce15/scope%20%26%20closures/ch5.md), a closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
-
----
-
 ### External Resources
 
 - [MDN Article on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [MDN Article on Block Scope](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block)
 - [MDN Article on Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+- [MDN Article on `var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 - [MDN Article on First Class Functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function)
 - [MDN Article on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [MPJ Video on Closures](https://www.youtube.com/watch?v=CQqwU2Ixu-U)
