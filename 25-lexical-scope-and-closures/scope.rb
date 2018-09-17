@@ -6,9 +6,8 @@ end
 
 say_name # what will happen 🤔
 
+not_hoisted()
 
-# not_hoisted
-#
-# def not_hoisted
-#   puts "Will this method execute 🤔"
-# end
+def not_hoisted
+  puts "Will this method execute 🤔"
+end
