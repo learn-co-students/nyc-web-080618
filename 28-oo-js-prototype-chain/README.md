@@ -202,6 +202,85 @@ robot3.rechargeBatteries() //'bender is recharging its batteries'
   - "The `constructor` method is a special method for creating and initializing an object created with a `class`. There can only be one special method with the name "constructor" in a class. A SyntaxError will be thrown if the class contains more than one occurrence of a `constructor` method." - [MDN Article on `class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
   - When using the `new` operator on a `class`, JavaScript will look for and invoke this special `constructor` function. You can think of this as being _similar_ to Ruby's `initialize` method. It is, however, not the same because JavaScript is not actually object oriented. The `class` syntax is just syntactic sugar over our previous example that manually added methods to the objects in our robot's prototype chain.
 
+#### Leveraging Closures to Create Private Pieces of State
+
+- In Ruby, making something `private` is as easy as this:
+
+```ruby
+class Donut
+  attr_reader :flavor
+  def initialize(flavor)
+    @flavor = flavor
+  end
+
+  private
+
+  def super_private
+    puts "wow, so secret!"
+  end
+end
+```
+
+- JavaScript **does not have a `private` keyword** so we'll need to take advantage of lexical scope and closures in order to hide data and/or functionality.
+
+- Let's imagine that we need to keep track of the total number of robots produced by our factory and assign an auto-incremeting id to each one. First, let's close over our `Robot` class by wrapping it in an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE):
+
+```javascript
+const Robot = (() => {
+  return class Robot {
+    constructor(name, weight, specialty) {
+      this.name = name
+      this.weight = weight
+      this.specialty = specialty
+    }
+
+    rechargeBatteries() {
+      console.log(`${this.name} is recharging its batteries`)
+    }
+  }
+})()
+```
+
+- Recall that Immediately Invoked Function Expressions (IIFEs) as the name implies, are **invoked** as soon as they're defined. Look closely at the snippet above and ask yourself what `const Robot` will evaluate to.
+  - `const Robot` will be **assigned** to whatever value the expression to the right of the `=` evaluates to. Notice that we have an IIFE that **returns** our Robot class.
+  - `const Robot` will evaluate to `Robot`, the key difference being that our `Robot` class is now enclosed in an IIFE.
+
+```javascript
+console.log(Robot) // Robot class
+```
+
+- We can now encapsulate some private variables within the closure, allowing us to create "private" variables:
+
+```javascript
+const Robot = (() => {
+  let totalRobotsMade = 1
+
+  return class Robot {
+    constructor(name, weight, specialty) {
+      this.name = name
+      this.weight = weight
+      this.specialty = specialty
+      this.id = totalRobotsMade++
+    }
+
+    rechargeBatteries() {
+      console.log(`${this.name} is recharging its batteries`)
+    }
+  }
+})()
+const robot1 = new Robot('sparko', 1000, 'making sparks')
+const robot2 = new Robot('the iron giant', 9999999, 'being giant and made of iron')
+const robot3 = new Robot('bender', 500, 'bending things')
+
+console.log(robot1.id) //1
+console.log(robot2.id) //2
+console.log(robot3.id) //3
+
+console.log(totalRobotsMade) //reference error: totalRobotsMade is not defined
+```
+
+- We're now able to wrap our `Robot` class in a closure in order to create private variables.
+
 ---
 
 ### External Resources
@@ -210,3 +289,4 @@ robot3.rechargeBatteries() //'bender is recharging its batteries'
 - [MDN Constructor Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
 - [MDN Article on the `class` keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 - [Master the JS Interview: Difference Between Prototypal and Class Inheritance](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9)
+- [MDN Article on IIFEs](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
