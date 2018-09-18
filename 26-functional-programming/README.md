@@ -2,6 +2,9 @@
 
 - Functional programming is another tool for solving problems. So far, we've been introduced to Object Oriented programming in Ruby. There is another approach called functional programming. Remember that JavaScript allows us to solve problems using both an OO approach and a Functional approach (we'll learn more about OO JavaScript later).
 
+  - The key difference between the two paradigms is that Object-Oriented programming focuses on **what** our objects are. Perhaps we have an `Animal` class and a `Dog` class that inherits from `Animal`. Our classes our concerned with shared functionality and shared state (more on that later)
+  - Functional programming on the other hand is primarily concerned with **the behavior of our app** what should this app do, what is the functionality we need. Instead of creating classes with shared state and functionality, we might instead rely on a series of functions that can be _composed_ together to solve a particular problem.
+
 ---
 
 ### Functions As First Class Objects
