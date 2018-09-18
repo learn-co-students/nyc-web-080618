@@ -11,7 +11,7 @@ header.innerText = 'flatStaGram'
 container.appendChild(header)
 
 // I will think about this later
-images.forEach(function(imgSrc) {
+dankMemes.forEach(function(imgSrc) {
   // Create an img element
   const img = document.createElement('img')
 
