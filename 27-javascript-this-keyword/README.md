@@ -54,7 +54,7 @@ andy.name # => self will be the instance
 
 ### The 4 JS environment rules that govern `this`
 
-1.  `this` within a function called within a particular context (i.e. `Object.method()`) will be the context/object:
+1.  `this` within a `function` called within a particular context (i.e. `Object.method()`) will be the context/object (**assuming that function was declared with the `function` keyword**):
 
 ```javascript
   const dog = {
@@ -80,7 +80,7 @@ sayThis() //window
 
 ---
 
-3.  `this` within a function called with the keyword `new` in front will point to the newly created object:
+3.  `this` within a constructor function called with the keyword `new` in front will point to the newly created object:
 
 ```javascript
 function Person(name, favColor) {
