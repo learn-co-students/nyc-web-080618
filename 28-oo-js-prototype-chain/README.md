@@ -10,7 +10,6 @@
   - `JS`'s and `Ruby`'s inheritance model similarities and differences
   - Understand the `Prototype Chain`
   - Create objects using `new` and `Constructor` functions
-  - *Assignment*: Build your own object
   - `new` vs Object.create
 - **How we will likely use it?**
   - Classes (syntactic sugar on the `prototype chain` )
@@ -116,14 +115,47 @@ robot1.recharge_batteries #=> sparko is recharging its batteries
 
 #### Prototypal Inheritance
 
-- JavaScript however, **does not have classes**. Ruby has these special things called _classes_ that allow us to create blueprints for our instances. JavaScript relies on prototypal inheritance. In essence, almost everything in JavaScript is an object: functions, object literals, even arrays. JavaScript objects have a chain of prototypes; other objects linked together. If a method is not defined on a particular object, JavaScript will look _up the chain of prototypes_ (which are plain old JavaScript objects) until it either finds the method or errors out
+- JavaScript however, **does not have classes**. Ruby has these special things called _classes_ that allow us to create blueprints for our instances. JavaScript relies on prototypal inheritance. In essence, almost everything in JavaScript is an object: functions, object literals, even arrays. JavaScript objects have a chain of prototypes; other objects that define certain _shared functionality_. If a method is not defined on a particular object, JavaScript will look _up the chain of prototypes_ (which are plain old JavaScript objects) until it either finds the method or errors out
   - "When it comes to inheritance, JavaScript only has one construct: objects. Each object has a private property which holds a link to another object called its prototype. That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. By definition, null has no prototype, and acts as the final link in this prototype chain.
   Nearly all objects in JavaScript are instances of Object which sits on the top of a prototype chain." - [MDN Article on Inheritance and the Prototype Chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 
-- We can leverage this inheritance model to avoid duplicating the `rechargeBatteries` function. First, let's update our `robotFactory` so that it is a [constructor function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor). A constructor function is a JavaScript function that creates object "instances." We'll use the `new` operator to create our robots:
+- Let's refactor our code so we can leverage `Object.create` to make our robots:
+
+```javascript
+const robotTemplate = {
+  name: null,
+  weight: null,
+  specialty: null,
+  rechargeBatteries: function() {
+    console.log(`${this.name} is recharging its batteries`)
+  }
+}
+
+const robot1 = Object.create(robotTemplate)
+robot1.name = 'sparko'
+robot1.weight = 1000,
+robot1.specialty = 'making sparks'
+
+robot1.__proto__ //robotTemplate
+
+robot1.rechargeBatteries === robotTemplate.rechargeBatteries //true
+
+robot1.rechargeBatteries() //sparko is recharging its batteries
+```
+
+- "`The Object.create()` method creates a new object, using an existing object to provide the newly created object's `__proto__` ." - [MDN Article on `Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
+  - `Object.create` in our example above allows us to create new objects with `robotTemplate` in their prototype chain. In other words, robot1 is **inheriting** the `rechargeBatteries` method from `robotTemplate`.
+
+- Again, our approach is getting better but manually assigning a `name`, `weight`, and `speciality` to our robots is tedious.
+
+---
+
+- Let's update our `robotFactory` so that it is a [constructor function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor). A constructor function is a JavaScript function that creates object "instances." Like `Object.create`, it will return a new **object** and will serve as the prototype object for our newly constructed robot instances:
 
 ```javascript
 function robotFactory(name, weight, specialty) {
+  // this in the context of a constructor function will be the newly created object {}
+  // constructor functions are called with the `new` keyword
   this.name = name
   this.weight = weight
   this.specialty = specialty
@@ -286,6 +318,7 @@ console.log(totalRobotsMade) //reference error: totalRobotsMade is not defined
 ### External Resources
 - [MDN Creating Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 - [MDN Article on Inheritance and the Prototype Chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+- [MDN Article on `Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
 - [MDN Constructor Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
 - [MDN Article on the `class` keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 - [Master the JS Interview: Difference Between Prototypal and Class Inheritance](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9)
