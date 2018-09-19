@@ -129,9 +129,9 @@ console.log(sayName())
 
 ---
 
-- Arrow functions will maintain their lexical scope when evaluating `this`. In other words, `this` will be **whatever it was at the time of _definition_, not _execution_**.
+- Arrow functions will maintain their lexical scope when evaluating `this`. In other words, `this` will be **whatever it is in the arrow functions enclosing scope**.
 
-- Unlike functions declared with the `function` keyword, arrow functions are much more predictable because `this` will **not** be dependent upon _execution_ context
+- Unlike functions declared with the `function` keyword, arrow functions are much more predictable because arrow functions do not create their own `this` during execution. Instead, they 'absorb' or 'remember' whatever `this` was in their enclosing scope.
 
 - "An arrow function does not have its own `this`; the `this` value of the enclosing _lexical context_ is used i.e. Arrow functions follow the normal variable lookup rules. So while searching for `this` which is not present in current scope they end up finding `this` from its enclosing scope" - [MDN Article on Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
@@ -150,7 +150,7 @@ sampleArrow() //window
 
 ```
 
-- Please note that we cannot, and should not, use `bind`, `call`, and `apply` on an arrow function. The purpose of these functions is to **fix** the value of `this` to a particular object. Arrow functions will already have `this` fixed to their lexical scope.
+- Please note that we cannot, and should not, use `bind`, `call`, and `apply` on an arrow function. The purpose of these functions is to **fix** the value of `this` to a particular object. Arrow functions will already have `this` fixed to their enclosing lexical scope.
 
 - This makes arrow functions unsuitable for methods defined on an object:
 
@@ -172,12 +172,18 @@ angryChef.cookFood('toast') //undefined is cooking toast
 ```javascript
 const dog = {
   name: 'winfield',
-  eatLettuce: function() {
-    return () => `${this.name} is is eating lettuce! CHOMP! CRUNCH!`
+  favSnacks: ['cabbage', 'carrots', 'bones'],
+  eatSnacks: function() {
+    this.favSnacks.forEach(snack => {
+      console.log(`${this.name} is eating ${snack}`)
+    })
   }
 }
 
-dog.eatLettuce()() //"winfield is is eating lettuce! CHOMP! CRUNCH!"
+dog.eatSnacks()
+// winfield is eating cabbage
+// winfield is eating carrots
+// winfield is eating bones
 ```
 
 ![dog eating cabbage](https://media.giphy.com/media/WLbtNNR5TKJBS/giphy.gif)
