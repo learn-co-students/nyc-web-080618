@@ -6,25 +6,38 @@
 - Use JavaScript to manipulate the DOM
 - Use JavaScript to append elements to the DOM using `document.createElement` and string templates
 
-## The DOM is a Tree
+## The DOM is a Tree 🎄
 
 - DOM (Document Object Model)
-  - A tree structure starting at the document
-  - Every element is a `node` in the tree
-  - Every element is related in this structure to every other element
-  - We can find elements by traversing the DOM using JavaScript
-  - Each element has a parent (except one) and children (maybe)
-  - Elements have properties that can be manipulated
-  - `document` object
-    - `document.body`
+  - The DOM is a tree structure with several child `nodes`. All of the elements in the tree are related to each other. Some elements may have children:
+
+```html
+<!-- document.body gives us the body node -->
+<body>
+
+    <div id="outer-node"><!-- div is a child of body -->
+      <div><!-- this div is a child of outer-node -->
+        <div>
+          <h1>Internet Memes</h1>
+        </div>
+      </div>
+    </div>
+</body>
+```
+
+- This tree structure starts at the `document`, where `document` is the parent of each individual `node`. Every single element in the DOM is a `node` in this tree: `<p></p>`, `<h1></h1>`, `<img>`, etc.
+- JavaScript allows us to **traverse** this tree to find and _manipulate_ different `nodes`.
+  - "The DOM model represents a document with a logical tree. Each branch of the tree ends in a node, and each node
+    contains objects. DOM methods allow programmatic access to the tree; with them you can change the document's
+    structure, style or content." -
+    [MDN Article on the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+- Elements (`nodes`) have properties that can be manipulated (`style`, `innerText`, `innerHTML`, etc)
 - Element interfaces
   - Different elements (`table`, `p`, `image`) support different methods
     - `image.src`, for instance
   - You have to look up the element (in documentation) to know which properties/ methods we can interact with
 
-
 ## Manipulating the DOM with JavaScript
-
 
 | Selector name                      | Return shape   | Return type    | Live? | Reference             | forEach? |
 | ---------------------------------- | -------------- | -------------- | ----- | --------------------- | -------- |
@@ -38,6 +51,7 @@
 
 ## External Resources:
 
+- [MDN Article on the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 - [MDN Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)
 - [MDN NodeList reference](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
 - [MDN HTMLCollection reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection)
