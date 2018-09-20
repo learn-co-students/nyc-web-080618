@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function DOMContentLoadedEventHand
  // append the comment to the dom
     commentsContainer.appendChild(commentPTag)
 
+    event.target.reset()//clear the form
+
   })
 
 })
