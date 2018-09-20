@@ -22,4 +22,4 @@ const container = document.getElementById('container')
 // i want an array of strings of HTML img tags
 const stringifiedImages = dankMemes.map(/*function*/(imgUrl) => `<img src="${imgUrl}">`)
 
-outerNode.innerHTML = stringifiedImages.join('')
+container.innerHTML = stringifiedImages.join('')

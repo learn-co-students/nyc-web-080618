@@ -26,20 +26,21 @@
 ```
 
 - This tree structure starts at the `document`, where `document` is the parent of each individual `node` (HTML Element). Every single HTML element in the DOM is a `node`: `<p></p>`, `<h1></h1>`, `<img>`, etc.
-- JavaScript allows us to **traverse** this tree to find and _manipulate_ different `nodes`.
+- JavaScript allows us to **traverse** this tree to find and _manipulate_ different `nodes` (we'll see how in a bit).
   - "The DOM model represents a document with a logical tree. Each branch of the tree ends in a node, and each node
     contains objects. DOM methods allow programmatic access to the tree; with them you can change the document's
     structure, style or content." -
     [MDN Article on the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-- Elements (`nodes`) have properties that can be manipulated (`style`, `innerText`, `innerHTML`, etc)
+- Elements (`nodes`) have properties that can be manipulated (`style`, `innerText`, `innerHTML`, etc). In this particular example, we'll be manipulating the `.src` attribute of some `img` tags.
 - Element interfaces
   - Different elements (`table`, `p`, `image`) support different methods
     - `image.src`, for instance
-  - You have to look up the element (in documentation) to know which properties/ methods we can interact with. [MDN HTML Element Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+    - `document.body.style.backgroundColor = 'red'`
+  - Refer to the documentation for each element you wish to manipulate to find out which propterties/attributes you can manipulate. [MDN HTML Element Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
 ## Manipulating the DOM with JavaScript
 
-| Selector name                      | Return shape   | Return type    | Live? | Reference             | forEach? |
+| Selector name                      | Return shape   | Return type    | Live? | Reference             | can i call forEach? |
 | ---------------------------------- | -------------- | -------------- | ----- | --------------------- | -------- |
 | `document.getElementById()`        | Single element | Element        | N/A   | https://goo.gl/8cHGoy | N/A      |
 | `element.getElementsByClassName()` | Collection     | HTMLCollection | Yes   | https://goo.gl/qcAhcp | No       |
