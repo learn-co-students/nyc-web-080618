@@ -25,7 +25,7 @@
 </body>
 ```
 
-- This tree structure starts at the `document`, where `document` is the parent of each individual `node`. Every single element in the DOM is a `node` in this tree: `<p></p>`, `<h1></h1>`, `<img>`, etc.
+- This tree structure starts at the `document`, where `document` is the parent of each individual `node` (HTML Element). Every single HTML element in the DOM is a `node`: `<p></p>`, `<h1></h1>`, `<img>`, etc.
 - JavaScript allows us to **traverse** this tree to find and _manipulate_ different `nodes`.
   - "The DOM model represents a document with a logical tree. Each branch of the tree ends in a node, and each node
     contains objects. DOM methods allow programmatic access to the tree; with them you can change the document's
@@ -35,7 +35,7 @@
 - Element interfaces
   - Different elements (`table`, `p`, `image`) support different methods
     - `image.src`, for instance
-  - You have to look up the element (in documentation) to know which properties/ methods we can interact with
+  - You have to look up the element (in documentation) to know which properties/ methods we can interact with. [MDN HTML Element Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
 ## Manipulating the DOM with JavaScript
 
