@@ -12,7 +12,7 @@ const renderAllPokemon = /*FUNCTION*/(pokemonList) => {
           <h1 class="center-text">${pokemonJSONObject.name}</h1>
           <div style="width:239px;margin:auto">
             <div style="width:96px;margin:auto">
-              <img src="${pokemonJSONObject.sprites.front}">
+              <img class="toggle-sprite" id="${pokemonJSONObject.name}" src="${pokemonJSONObject.sprites.front}">
             </div>
           </div>
           <p style="padding:10px;" class="center-text flip-image" data-pokename="${pokemonJSONObject.name}" data-action="flip-image">
@@ -56,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // when app first mounts, render all pokemon
   const initialRenderPokemonHTMLString = renderAllPokemon(POKEMON) //helper function that produces a string of HTML
   pokemonContainerToAppend.innerHTML = initialRenderPokemonHTMLString.join('') //set the InnerHTML of a div to the HTML string produced by our render function
-
+/******************************** EVENT HANDLERS ************************************************************/
+/******************************** SEARCH HANDLER ************************************************************/
   pokemonSearchInputField.addEventListener('input', (event) => { //listen for the user typing into the search field
     const filteredPokemonBasedOnSearchTerm = POKEMON.filter((pokemonJSONObject) => { //filter pokemon based on user search term
       // does the current pokemon in our itereration have a name that INCLUDES whatever the user typed
@@ -65,6 +66,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const filteredPokemonHTMLString = renderAllPokemon(filteredPokemonBasedOnSearchTerm) //use our helper method to render the pokemon again
 
-    pokemonContainerToAppend.innerHTML = filteredPokemonHTMLString.join('')
+    pokemonContainerToAppend.innerHTML = filteredPokemonHTMLString.join('') //set the InnerHTML of our DIV to the pokemon string produced by the render helper method
+  })
+  /*************************** FLIP IMG HANDLER ************************************************************/
+  pokemonContainerToAppend.addEventListener('click', (event) => {
+    if (event.target.className === 'toggle-sprite') {
+      const pokeImgNameThatWasClicked = event.target.id //name of the pokemon that was clicked
+      const pokeWithMatchingName = POKEMON.find((pokemonJSONObject) => pokemonJSONObject.name === pokeImgNameThatWasClicked)
+// event.target is the image that was clicked
+      if (event.target.src === pokeWithMatchingName.sprites.front) {
+        event.target.src = pokeWithMatchingName.sprites.back //assign src of clicked img to the back sprite
+      } else {
+        event.target.src = pokeWithMatchingName.sprites.front
+      }
+    }
   })
 })
