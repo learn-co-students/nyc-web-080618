@@ -38,7 +38,6 @@ console.log('Wow that sleep function took forever to run. 1 Star 🌟')
   - Callback functions as handlers for event listeners
   - `setTimeout` and `setInterval`
 - That code runs _asynchronously_
-- Imagine that you were a robot and could only complete tasks _synchronously_. Part of your morning routine might involve making coffee, putting your shoes on, etc.
 
 ## Examples of Sync and Async code
 - Let's take a look at some examples of synchronous and asynchronous code
@@ -184,6 +183,16 @@ Add javascript so that
 
 ---
 
+## What Does AJAX Stand Mean?
+
+- "synchronous JavaScript + XML, while not a technology in itself, is a term coined in 2005 by Jesse James Garrett, that describes a 'new' approach to using a number of existing technologies together, including HTML or XHTML, Cascading Style Sheets, JavaScript, The Document Object Model, XML, XSLT, and most importantly the XMLHttpRequest object.
+When these technologies are combined in the Ajax model, web applications are able to make quick, incremental updates to the user interface without reloading the entire browser page. This makes the application faster and more responsive to user actions.
+Although X in Ajax stands for XML, JSON is used more than XML nowadays because of its many advantages such as being lighter and a part of JavaScript. Both JSON and XML are used for packaging information in Ajax model." -[MDN Article on AJAX][mdn-ajax]
+
+- "What AJAX allows you to do is just update parts of the DOM of a HTML webpage instead of having to reload the entire page. AJAX also lets you work asynchronously, meaning your code continues to run while that part of your webpage is trying to reload (compared to synchronously which will block your code from running until that part of your webpage is done reloading)." - [MDN Glossary on AJAX][mdn-ajax-glossary]
+
+---
+
 ## External Resources
 
 - [What the heck is the Event Loop **make sure you watch this video at least once**][loupe-site]
@@ -197,4 +206,6 @@ Add javascript so that
 [mdn-wep-apis]: https://developer.mozilla.org/en-US/docs/WebAPI
 [mdn-promises]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [problem-promises]: https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html
+[mdn-ajax]: https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX
+[mdn-ajax-glossary]: https://developer.mozilla.org/en-US/docs/Glossary/AJAX
 [ajax-soap-bottle-img]: https://lh3.googleusercontent.com/proxy/Vk9lqnU5DizCra628qXRwitYNWl40WLt2K_WeA5oZaMZf3dx8c_RA9wuPKj2_aY5pASPLPN3PKscfIaZ4Kkc8MeN2AfUk5ZAoOGao3RcIRNJXHCE8CpntjuCEx73s41MBoO5hYsk-vuWvQt7NCIf9xTZxGZWFaJ0DKRYM0M2jLAG7Z3XAClxcR9ZisVLuE2zF5qSVoYGASVQEiErLI8=s1600-pd-e365-rw-pc0xffffff
