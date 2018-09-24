@@ -6,6 +6,12 @@ The last time we saw this lab, we were **not interacting with our database at al
 
 - To boot the server, call `json-server --watch db.json`. If we navigate to http://localhost:3000/pokemons, we should see all of our JSON data. Our browser is sending an HTTP `GET` **request** and the server **responds** with some `JSON`.
 
+---
+
+## Sending an HTTP Request to our Server with `fetch`
+
+
+
 
 ---
 
