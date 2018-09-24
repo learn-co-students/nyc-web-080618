@@ -10,3 +10,8 @@ The last time we saw this lab, we were **not interacting with our database at al
 ---
 
 ## External Resources
+
+
+<!-- markdown vars -->
+[mdn-accept-header]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept
+[mdn-content-type-header]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type
