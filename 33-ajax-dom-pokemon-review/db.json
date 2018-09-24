@@ -3,7 +3,7 @@
     {
       "height": 10,
       "weight": 130,
-      "id": 2,
+      "order": 2,
       "name": "ivysaur",
       "abilities": [
         "overgrow",
@@ -48,7 +48,7 @@
     {
       "height": 20,
       "weight": 1000,
-      "id": 3,
+      "order": 3,
       "name": "venusaur",
       "abilities": [
         "overgrow",
@@ -93,7 +93,7 @@
     {
       "height": 6,
       "weight": 85,
-      "id": 5,
+      "order": 5,
       "name": "charmander",
       "abilities": [
         "blaze",
@@ -148,7 +148,7 @@
     {
       "height": 11,
       "weight": 190,
-      "id": 6,
+      "order": 6,
       "name": "charmeleon",
       "abilities": [
         "blaze",
@@ -192,7 +192,7 @@
     {
       "height": 17,
       "weight": 905,
-      "id": 7,
+      "order": 7,
       "name": "charizard",
       "abilities": [
         "blaze",
@@ -248,7 +248,7 @@
     {
       "height": 5,
       "weight": 90,
-      "id": 10,
+      "order": 10,
       "name": "squirtle",
       "abilities": [
         "torrent",
@@ -303,7 +303,7 @@
     {
       "height": 10,
       "weight": 225,
-      "id": 11,
+      "order": 11,
       "name": "wartortle",
       "abilities": [
         "torrent",
@@ -347,7 +347,7 @@
     {
       "height": 16,
       "weight": 855,
-      "id": 12,
+      "order": 12,
       "name": "blastoise",
       "abilities": [
         "torrent",
@@ -391,7 +391,7 @@
     {
       "height": 3,
       "weight": 29,
-      "id": 14,
+      "order": 14,
       "name": "caterpie",
       "abilities": [
         "shield-dust",
@@ -435,7 +435,7 @@
     {
       "height": 7,
       "weight": 99,
-      "id": 15,
+      "order": 15,
       "name": "metapod",
       "abilities": [
         "shed-skin"
@@ -478,7 +478,7 @@
     {
       "height": 11,
       "weight": 320,
-      "id": 16,
+      "order": 16,
       "name": "butterfree",
       "abilities": [
         "compound-eyes",
@@ -523,7 +523,7 @@
     {
       "height": 3,
       "weight": 32,
-      "id": 17,
+      "order": 17,
       "name": "weedle",
       "abilities": [
         "shield-dust",
@@ -568,7 +568,7 @@
     {
       "height": 6,
       "weight": 100,
-      "id": 18,
+      "order": 18,
       "name": "kakuna",
       "abilities": [
         "shed-skin"
@@ -612,7 +612,7 @@
     {
       "height": 10,
       "weight": 295,
-      "id": 19,
+      "order": 19,
       "name": "beedrill",
       "abilities": [
         "swarm",
@@ -657,7 +657,7 @@
     {
       "height": 3,
       "weight": 18,
-      "id": 21,
+      "order": 21,
       "name": "pidgey",
       "abilities": [
         "keen-eye",
@@ -703,7 +703,7 @@
     {
       "height": 11,
       "weight": 300,
-      "id": 22,
+      "order": 22,
       "name": "pidgeotto",
       "abilities": [
         "keen-eye",
@@ -749,7 +749,7 @@
     {
       "height": 15,
       "weight": 395,
-      "id": 23,
+      "order": 23,
       "name": "pidgeot",
       "abilities": [
         "keen-eye",
@@ -795,7 +795,7 @@
     {
       "height": 3,
       "weight": 35,
-      "id": 25,
+      "order": 25,
       "name": "rattata",
       "abilities": [
         "run-away",
@@ -840,7 +840,7 @@
     {
       "height": 7,
       "weight": 185,
-      "id": 26,
+      "order": 26,
       "name": "raticate",
       "abilities": [
         "run-away",
@@ -893,7 +893,7 @@
     {
       "height": 3,
       "weight": 20,
-      "id": 27,
+      "order": 27,
       "name": "spearow",
       "abilities": [
         "keen-eye",
@@ -938,7 +938,7 @@
     {
       "height": 12,
       "weight": 380,
-      "id": 28,
+      "order": 28,
       "name": "fearow",
       "abilities": [
         "keen-eye",
@@ -983,7 +983,7 @@
     {
       "height": 20,
       "weight": 69,
-      "id": 29,
+      "order": 29,
       "name": "ekans",
       "abilities": [
         "intimidate",
@@ -1028,7 +1028,7 @@
     {
       "height": 35,
       "weight": 650,
-      "id": 30,
+      "order": 30,
       "name": "arbok",
       "abilities": [
         "intimidate",
@@ -1083,7 +1083,7 @@
     {
       "height": 4,
       "weight": 60,
-      "id": 32,
+      "order": 32,
       "name": "pikachu",
       "abilities": [
         "static",
@@ -1127,7 +1127,7 @@
     {
       "height": 8,
       "weight": 300,
-      "id": 39,
+      "order": 39,
       "name": "raichu",
       "abilities": [
         "static",
@@ -1171,7 +1171,7 @@
     {
       "height": 6,
       "weight": 120,
-      "id": 40,
+      "order": 40,
       "name": "sandshrew",
       "abilities": [
         "sand-veil",
@@ -1226,7 +1226,7 @@
     {
       "height": 10,
       "weight": 295,
-      "id": 41,
+      "order": 41,
       "name": "sandslash",
       "abilities": [
         "sand-veil",
@@ -1270,7 +1270,7 @@
     {
       "height": 4,
       "weight": 70,
-      "id": 42,
+      "order": 42,
       "name": "nidoran-f",
       "abilities": [
         "poison-point",
@@ -1323,7 +1323,7 @@
     {
       "height": 8,
       "weight": 200,
-      "id": 43,
+      "order": 43,
       "name": "nidorina",
       "abilities": [
         "poison-point",
@@ -1368,7 +1368,7 @@
     {
       "height": 13,
       "weight": 600,
-      "id": 44,
+      "order": 44,
       "name": "nidoqueen",
       "abilities": [
         "poison-point",
@@ -1425,7 +1425,7 @@
     {
       "height": 5,
       "weight": 90,
-      "id": 45,
+      "order": 45,
       "name": "nidoran-m",
       "abilities": [
         "poison-point",
@@ -1470,7 +1470,7 @@
     {
       "height": 9,
       "weight": 195,
-      "id": 46,
+      "order": 46,
       "name": "nidorino",
       "abilities": [
         "poison-point",
@@ -1515,7 +1515,7 @@
     {
       "height": 14,
       "weight": 620,
-      "id": 47,
+      "order": 47,
       "name": "nidoking",
       "abilities": [
         "poison-point",
@@ -1572,7 +1572,7 @@
     {
       "height": 6,
       "weight": 75,
-      "id": 49,
+      "order": 49,
       "name": "clefairy",
       "abilities": [
         "cute-charm",
@@ -1628,7 +1628,7 @@
     {
       "height": 13,
       "weight": 400,
-      "id": 50,
+      "order": 50,
       "name": "clefable",
       "abilities": [
         "cute-charm",
@@ -1684,7 +1684,7 @@
     {
       "height": 6,
       "weight": 99,
-      "id": 51,
+      "order": 51,
       "name": "vulpix",
       "abilities": [
         "flash-fire",
@@ -1728,7 +1728,7 @@
     {
       "height": 11,
       "weight": 199,
-      "id": 52,
+      "order": 52,
       "name": "ninetales",
       "abilities": [
         "flash-fire",
@@ -1772,7 +1772,7 @@
     {
       "height": 5,
       "weight": 55,
-      "id": 54,
+      "order": 54,
       "name": "jigglypuff",
       "abilities": [
         "cute-charm",
@@ -1829,7 +1829,7 @@
     {
       "height": 10,
       "weight": 120,
-      "id": 55,
+      "order": 55,
       "name": "wigglytuff",
       "abilities": [
         "cute-charm",
@@ -1886,7 +1886,7 @@
     {
       "height": 8,
       "weight": 75,
-      "id": 56,
+      "order": 56,
       "name": "zubat",
       "abilities": [
         "inner-focus",
@@ -1931,7 +1931,7 @@
     {
       "height": 16,
       "weight": 550,
-      "id": 57,
+      "order": 57,
       "name": "golbat",
       "abilities": [
         "inner-focus",
@@ -1987,7 +1987,7 @@
     {
       "height": 5,
       "weight": 54,
-      "id": 59,
+      "order": 59,
       "name": "oddish",
       "abilities": [
         "chlorophyll",
@@ -2032,7 +2032,7 @@
     {
       "height": 8,
       "weight": 86,
-      "id": 60,
+      "order": 60,
       "name": "gloom",
       "abilities": [
         "chlorophyll",
@@ -2077,7 +2077,7 @@
     {
       "height": 12,
       "weight": 186,
-      "id": 61,
+      "order": 61,
       "name": "vileplume",
       "abilities": [
         "chlorophyll",
@@ -2122,7 +2122,7 @@
     {
       "height": 3,
       "weight": 54,
-      "id": 63,
+      "order": 63,
       "name": "paras",
       "abilities": [
         "effect-spore",
@@ -2168,7 +2168,7 @@
     {
       "height": 10,
       "weight": 295,
-      "id": 64,
+      "order": 64,
       "name": "parasect",
       "abilities": [
         "effect-spore",
@@ -2214,7 +2214,7 @@
     {
       "height": 10,
       "weight": 300,
-      "id": 65,
+      "order": 65,
       "name": "venonat",
       "abilities": [
         "compound-eyes",
@@ -2260,7 +2260,7 @@
     {
       "height": 15,
       "weight": 125,
-      "id": 66,
+      "order": 66,
       "name": "venomoth",
       "abilities": [
         "shield-dust",
@@ -2306,7 +2306,7 @@
     {
       "height": 2,
       "weight": 8,
-      "id": 67,
+      "order": 67,
       "name": "diglett",
       "abilities": [
         "sand-veil",
@@ -2351,7 +2351,7 @@
     {
       "height": 7,
       "weight": 333,
-      "id": 68,
+      "order": 68,
       "name": "dugtrio",
       "abilities": [
         "sand-veil",
@@ -2396,7 +2396,7 @@
     {
       "height": 4,
       "weight": 42,
-      "id": 69,
+      "order": 69,
       "name": "meowth",
       "abilities": [
         "pickup",
@@ -2450,7 +2450,7 @@
     {
       "height": 10,
       "weight": 320,
-      "id": 70,
+      "order": 70,
       "name": "persian",
       "abilities": [
         "limber",
@@ -2504,7 +2504,7 @@
     {
       "height": 8,
       "weight": 196,
-      "id": 71,
+      "order": 71,
       "name": "psyduck",
       "abilities": [
         "damp",
@@ -2549,7 +2549,7 @@
     {
       "height": 17,
       "weight": 766,
-      "id": 72,
+      "order": 72,
       "name": "golduck",
       "abilities": [
         "damp",
@@ -2605,7 +2605,7 @@
     {
       "height": 5,
       "weight": 280,
-      "id": 73,
+      "order": 73,
       "name": "mankey",
       "abilities": [
         "vital-spirit",
@@ -2661,7 +2661,7 @@
     {
       "height": 10,
       "weight": 320,
-      "id": 74,
+      "order": 74,
       "name": "primeape",
       "abilities": [
         "vital-spirit",
@@ -2706,7 +2706,7 @@
     {
       "height": 7,
       "weight": 190,
-      "id": 75,
+      "order": 75,
       "name": "growlithe",
       "abilities": [
         "intimidate",
@@ -2751,7 +2751,7 @@
     {
       "height": 19,
       "weight": 1550,
-      "id": 76,
+      "order": 76,
       "name": "arcanine",
       "abilities": [
         "intimidate",
@@ -2796,7 +2796,7 @@
     {
       "height": 6,
       "weight": 124,
-      "id": 77,
+      "order": 77,
       "name": "poliwag",
       "abilities": [
         "water-absorb",
@@ -2841,7 +2841,7 @@
     {
       "height": 10,
       "weight": 200,
-      "id": 78,
+      "order": 78,
       "name": "poliwhirl",
       "abilities": [
         "water-absorb",
@@ -2886,7 +2886,7 @@
     {
       "height": 13,
       "weight": 540,
-      "id": 79,
+      "order": 79,
       "name": "poliwrath",
       "abilities": [
         "water-absorb",
@@ -2943,7 +2943,7 @@
     {
       "height": 9,
       "weight": 195,
-      "id": 81,
+      "order": 81,
       "name": "abra",
       "abilities": [
         "synchronize",
@@ -2988,7 +2988,7 @@
     {
       "height": 13,
       "weight": 565,
-      "id": 82,
+      "order": 82,
       "name": "kadabra",
       "abilities": [
         "synchronize",
@@ -3033,7 +3033,7 @@
     {
       "height": 15,
       "weight": 480,
-      "id": 83,
+      "order": 83,
       "name": "alakazam",
       "abilities": [
         "synchronize",
@@ -3078,7 +3078,7 @@
     {
       "height": 8,
       "weight": 195,
-      "id": 85,
+      "order": 85,
       "name": "machop",
       "abilities": [
         "guts",
@@ -3134,7 +3134,7 @@
     {
       "height": 15,
       "weight": 705,
-      "id": 86,
+      "order": 86,
       "name": "machoke",
       "abilities": [
         "guts",
@@ -3190,7 +3190,7 @@
     {
       "height": 16,
       "weight": 1300,
-      "id": 87,
+      "order": 87,
       "name": "machamp",
       "abilities": [
         "guts",
@@ -3246,7 +3246,7 @@
     {
       "height": 7,
       "weight": 40,
-      "id": 88,
+      "order": 88,
       "name": "bellsprout",
       "abilities": [
         "chlorophyll",
@@ -3302,7 +3302,7 @@
     {
       "height": 10,
       "weight": 64,
-      "id": 89,
+      "order": 89,
       "name": "weepinbell",
       "abilities": [
         "chlorophyll",
@@ -3347,7 +3347,7 @@
     {
       "height": 17,
       "weight": 155,
-      "id": 90,
+      "order": 90,
       "name": "victreebel",
       "abilities": [
         "chlorophyll",
@@ -3392,7 +3392,7 @@
     {
       "height": 9,
       "weight": 455,
-      "id": 91,
+      "order": 91,
       "name": "tentacool",
       "abilities": [
         "clear-body",
@@ -3438,7 +3438,7 @@
     {
       "height": 16,
       "weight": 550,
-      "id": 92,
+      "order": 92,
       "name": "tentacruel",
       "abilities": [
         "clear-body",
@@ -3484,7 +3484,7 @@
     {
       "height": 4,
       "weight": 200,
-      "id": 93,
+      "order": 93,
       "name": "geodude",
       "abilities": [
         "rock-head",
@@ -3530,7 +3530,7 @@
     {
       "height": 10,
       "weight": 1050,
-      "id": 94,
+      "order": 94,
       "name": "graveler",
       "abilities": [
         "rock-head",
@@ -3576,7 +3576,7 @@
     {
       "height": 14,
       "weight": 3000,
-      "id": 95,
+      "order": 95,
       "name": "golem",
       "abilities": [
         "rock-head",
@@ -3622,7 +3622,7 @@
     {
       "height": 10,
       "weight": 300,
-      "id": 96,
+      "order": 96,
       "name": "ponyta",
       "abilities": [
         "run-away",
@@ -3667,7 +3667,7 @@
     {
       "height": 17,
       "weight": 950,
-      "id": 97,
+      "order": 97,
       "name": "rapidash",
       "abilities": [
         "run-away",
@@ -3712,7 +3712,7 @@
     {
       "height": 12,
       "weight": 360,
-      "id": 98,
+      "order": 98,
       "name": "slowpoke",
       "abilities": [
         "oblivious",
@@ -3758,7 +3758,7 @@
     {
       "height": 16,
       "weight": 785,
-      "id": 99,
+      "order": 99,
       "name": "slowbro",
       "abilities": [
         "oblivious",
@@ -3815,7 +3815,7 @@
     {
       "height": 3,
       "weight": 60,
-      "id": 102,
+      "order": 102,
       "name": "magnemite",
       "abilities": [
         "magnet-pull",
@@ -3861,7 +3861,7 @@
     {
       "height": 10,
       "weight": 600,
-      "id": 103,
+      "order": 103,
       "name": "magneton",
       "abilities": [
         "magnet-pull",
@@ -3907,7 +3907,7 @@
     {
       "height": 8,
       "weight": 150,
-      "id": 105,
+      "order": 105,
       "name": "farfetchd",
       "abilities": [
         "keen-eye",
@@ -3963,7 +3963,7 @@
     {
       "height": 14,
       "weight": 392,
-      "id": 106,
+      "order": 106,
       "name": "doduo",
       "abilities": [
         "run-away",
@@ -4009,7 +4009,7 @@
     {
       "height": 18,
       "weight": 852,
-      "id": 107,
+      "order": 107,
       "name": "dodrio",
       "abilities": [
         "run-away",
@@ -4055,7 +4055,7 @@
     {
       "height": 11,
       "weight": 900,
-      "id": 108,
+      "order": 108,
       "name": "seel",
       "abilities": [
         "thick-fat",
@@ -4100,7 +4100,7 @@
     {
       "height": 17,
       "weight": 1200,
-      "id": 109,
+      "order": 109,
       "name": "dewgong",
       "abilities": [
         "thick-fat",
@@ -4146,7 +4146,7 @@
     {
       "height": 9,
       "weight": 300,
-      "id": 110,
+      "order": 110,
       "name": "grimer",
       "abilities": [
         "stench",
@@ -4191,7 +4191,7 @@
     {
       "height": 12,
       "weight": 300,
-      "id": 111,
+      "order": 111,
       "name": "muk",
       "abilities": [
         "stench",
@@ -4247,7 +4247,7 @@
     {
       "height": 3,
       "weight": 40,
-      "id": 112,
+      "order": 112,
       "name": "shellder",
       "abilities": [
         "shell-armor",
@@ -4292,7 +4292,7 @@
     {
       "height": 15,
       "weight": 1325,
-      "id": 113,
+      "order": 113,
       "name": "cloyster",
       "abilities": [
         "shell-armor",
@@ -4338,7 +4338,7 @@
     {
       "height": 13,
       "weight": 1,
-      "id": 114,
+      "order": 114,
       "name": "gastly",
       "abilities": [
         "levitate"
@@ -4382,7 +4382,7 @@
     {
       "height": 16,
       "weight": 1,
-      "id": 115,
+      "order": 115,
       "name": "haunter",
       "abilities": [
         "levitate"
@@ -4437,7 +4437,7 @@
     {
       "height": 15,
       "weight": 405,
-      "id": 116,
+      "order": 116,
       "name": "gengar",
       "abilities": [
         "levitate"
@@ -4492,7 +4492,7 @@
     {
       "height": 88,
       "weight": 2100,
-      "id": 118,
+      "order": 118,
       "name": "onix",
       "abilities": [
         "rock-head",
@@ -4549,7 +4549,7 @@
     {
       "height": 10,
       "weight": 324,
-      "id": 121,
+      "order": 121,
       "name": "drowzee",
       "abilities": [
         "insomnia",
@@ -4605,7 +4605,7 @@
     {
       "height": 16,
       "weight": 756,
-      "id": 122,
+      "order": 122,
       "name": "hypno",
       "abilities": [
         "insomnia",
@@ -4661,7 +4661,7 @@
     {
       "height": 4,
       "weight": 65,
-      "id": 123,
+      "order": 123,
       "name": "krabby",
       "abilities": [
         "hyper-cutter",
@@ -4706,7 +4706,7 @@
     {
       "height": 13,
       "weight": 600,
-      "id": 124,
+      "order": 124,
       "name": "kingler",
       "abilities": [
         "hyper-cutter",
@@ -4751,7 +4751,7 @@
     {
       "height": 5,
       "weight": 104,
-      "id": 125,
+      "order": 125,
       "name": "voltorb",
       "abilities": [
         "soundproof",
@@ -4796,7 +4796,7 @@
     {
       "height": 12,
       "weight": 666,
-      "id": 126,
+      "order": 126,
       "name": "electrode",
       "abilities": [
         "soundproof",
@@ -4841,7 +4841,7 @@
     {
       "height": 4,
       "weight": 25,
-      "id": 127,
+      "order": 127,
       "name": "exeggcute",
       "abilities": [
         "chlorophyll",
@@ -4897,7 +4897,7 @@
     {
       "height": 20,
       "weight": 1200,
-      "id": 128,
+      "order": 128,
       "name": "exeggutor",
       "abilities": [
         "chlorophyll",
@@ -4942,7 +4942,7 @@
     {
       "height": 4,
       "weight": 65,
-      "id": 129,
+      "order": 129,
       "name": "cubone",
       "abilities": [
         "rock-head",
@@ -4998,7 +4998,7 @@
     {
       "height": 10,
       "weight": 450,
-      "id": 130,
+      "order": 130,
       "name": "marowak",
       "abilities": [
         "rock-head",
@@ -5054,7 +5054,7 @@
     {
       "height": 15,
       "weight": 498,
-      "id": 132,
+      "order": 132,
       "name": "hitmonlee",
       "abilities": [
         "limber",
@@ -5099,7 +5099,7 @@
     {
       "height": 14,
       "weight": 502,
-      "id": 133,
+      "order": 133,
       "name": "hitmonchan",
       "abilities": [
         "keen-eye",
@@ -5144,7 +5144,7 @@
     {
       "height": 12,
       "weight": 655,
-      "id": 135,
+      "order": 135,
       "name": "lickitung",
       "abilities": [
         "own-tempo",
@@ -5200,7 +5200,7 @@
     {
       "height": 6,
       "weight": 10,
-      "id": 137,
+      "order": 137,
       "name": "koffing",
       "abilities": [
         "levitate"
@@ -5252,7 +5252,7 @@
     {
       "height": 12,
       "weight": 95,
-      "id": 138,
+      "order": 138,
       "name": "weezing",
       "abilities": [
         "levitate"
@@ -5295,7 +5295,7 @@
     {
       "height": 10,
       "weight": 1150,
-      "id": 139,
+      "order": 139,
       "name": "rhyhorn",
       "abilities": [
         "lightning-rod",
@@ -5350,7 +5350,7 @@
     {
       "height": 19,
       "weight": 1200,
-      "id": 140,
+      "order": 140,
       "name": "rhydon",
       "abilities": [
         "lightning-rod",
@@ -5407,7 +5407,7 @@
     {
       "height": 11,
       "weight": 346,
-      "id": 143,
+      "order": 143,
       "name": "chansey",
       "abilities": [
         "natural-cure",
@@ -5463,7 +5463,7 @@
     {
       "height": 10,
       "weight": 350,
-      "id": 145,
+      "order": 145,
       "name": "tangela",
       "abilities": [
         "chlorophyll",
@@ -5519,7 +5519,7 @@
     {
       "height": 22,
       "weight": 800,
-      "id": 147,
+      "order": 147,
       "name": "kangaskhan",
       "abilities": [
         "early-bird",
@@ -5575,7 +5575,7 @@
     {
       "height": 4,
       "weight": 80,
-      "id": 149,
+      "order": 149,
       "name": "horsea",
       "abilities": [
         "swift-swim",
@@ -5620,7 +5620,7 @@
     {
       "height": 12,
       "weight": 250,
-      "id": 150,
+      "order": 150,
       "name": "seadra",
       "abilities": [
         "poison-point",
@@ -5665,7 +5665,7 @@
     {
       "height": 6,
       "weight": 150,
-      "id": 152,
+      "order": 152,
       "name": "goldeen",
       "abilities": [
         "swift-swim",
@@ -5710,7 +5710,7 @@
     {
       "height": 13,
       "weight": 390,
-      "id": 153,
+      "order": 153,
       "name": "seaking",
       "abilities": [
         "swift-swim",
@@ -5755,7 +5755,7 @@
     {
       "height": 8,
       "weight": 345,
-      "id": 154,
+      "order": 154,
       "name": "staryu",
       "abilities": [
         "illuminate",
@@ -5800,7 +5800,7 @@
     {
       "height": 11,
       "weight": 800,
-      "id": 155,
+      "order": 155,
       "name": "starmie",
       "abilities": [
         "illuminate",
@@ -5846,7 +5846,7 @@
     {
       "height": 13,
       "weight": 545,
-      "id": 157,
+      "order": 157,
       "name": "mr-mime",
       "abilities": [
         "soundproof",
@@ -5903,7 +5903,7 @@
     {
       "height": 15,
       "weight": 560,
-      "id": 158,
+      "order": 158,
       "name": "scyther",
       "abilities": [
         "swarm",
@@ -5949,7 +5949,7 @@
     {
       "height": 14,
       "weight": 406,
-      "id": 162,
+      "order": 162,
       "name": "jynx",
       "abilities": [
         "oblivious",
@@ -6006,7 +6006,7 @@
     {
       "height": 11,
       "weight": 300,
-      "id": 164,
+      "order": 164,
       "name": "electabuzz",
       "abilities": [
         "static",
@@ -6050,7 +6050,7 @@
     {
       "height": 13,
       "weight": 445,
-      "id": 167,
+      "order": 167,
       "name": "magmar",
       "abilities": [
         "flame-body",
@@ -6105,7 +6105,7 @@
     {
       "height": 15,
       "weight": 550,
-      "id": 169,
+      "order": 169,
       "name": "pinsir",
       "abilities": [
         "hyper-cutter",
@@ -6160,7 +6160,7 @@
     {
       "height": 14,
       "weight": 884,
-      "id": 171,
+      "order": 171,
       "name": "tauros",
       "abilities": [
         "intimidate",
@@ -6205,7 +6205,7 @@
     {
       "height": 9,
       "weight": 100,
-      "id": 172,
+      "order": 172,
       "name": "magikarp",
       "abilities": [
         "swift-swim",
@@ -6249,7 +6249,7 @@
     {
       "height": 65,
       "weight": 2350,
-      "id": 173,
+      "order": 173,
       "name": "gyarados",
       "abilities": [
         "intimidate",
@@ -6301,7 +6301,7 @@
     {
       "height": 25,
       "weight": 2200,
-      "id": 175,
+      "order": 175,
       "name": "lapras",
       "abilities": [
         "water-absorb",
@@ -6358,7 +6358,7 @@
     {
       "height": 3,
       "weight": 40,
-      "id": 176,
+      "order": 176,
       "name": "ditto",
       "abilities": [
         "limber",
@@ -6402,7 +6402,7 @@
     {
       "height": 3,
       "weight": 65,
-      "id": 177,
+      "order": 177,
       "name": "eevee",
       "abilities": [
         "run-away",
@@ -6447,7 +6447,7 @@
     {
       "height": 10,
       "weight": 290,
-      "id": 178,
+      "order": 178,
       "name": "vaporeon",
       "abilities": [
         "water-absorb",
@@ -6491,7 +6491,7 @@
     {
       "height": 8,
       "weight": 245,
-      "id": 179,
+      "order": 179,
       "name": "jolteon",
       "abilities": [
         "volt-absorb",
@@ -6535,7 +6535,7 @@
     {
       "height": 9,
       "weight": 250,
-      "id": 180,
+      "order": 180,
       "name": "flareon",
       "abilities": [
         "flash-fire",
@@ -6585,7 +6585,7 @@
     {
       "height": 8,
       "weight": 365,
-      "id": 186,
+      "order": 186,
       "name": "porygon",
       "abilities": [
         "trace",
@@ -6630,7 +6630,7 @@
     {
       "height": 4,
       "weight": 75,
-      "id": 189,
+      "order": 189,
       "name": "omanyte",
       "abilities": [
         "swift-swim",
@@ -6684,7 +6684,7 @@
     {
       "height": 10,
       "weight": 350,
-      "id": 190,
+      "order": 190,
       "name": "omastar",
       "abilities": [
         "swift-swim",
@@ -6730,7 +6730,7 @@
     {
       "height": 5,
       "weight": 115,
-      "id": 191,
+      "order": 191,
       "name": "kabuto",
       "abilities": [
         "swift-swim",
@@ -6776,7 +6776,7 @@
     {
       "height": 13,
       "weight": 405,
-      "id": 192,
+      "order": 192,
       "name": "kabutops",
       "abilities": [
         "swift-swim",
@@ -6822,7 +6822,7 @@
     {
       "height": 18,
       "weight": 590,
-      "id": 193,
+      "order": 193,
       "name": "aerodactyl",
       "abilities": [
         "rock-head",
@@ -6878,7 +6878,7 @@
     {
       "height": 21,
       "weight": 4600,
-      "id": 196,
+      "order": 196,
       "name": "snorlax",
       "abilities": [
         "immunity",
@@ -6934,7 +6934,7 @@
     {
       "height": 17,
       "weight": 554,
-      "id": 197,
+      "order": 197,
       "name": "articuno",
       "abilities": [
         "pressure",
@@ -6979,7 +6979,7 @@
     {
       "height": 16,
       "weight": 526,
-      "id": 198,
+      "order": 198,
       "name": "zapdos",
       "abilities": [
         "pressure",
@@ -7024,7 +7024,7 @@
     {
       "height": 20,
       "weight": 600,
-      "id": 199,
+      "order": 199,
       "name": "moltres",
       "abilities": [
         "pressure",
@@ -7069,7 +7069,7 @@
     {
       "height": 18,
       "weight": 33,
-      "id": 200,
+      "order": 200,
       "name": "dratini",
       "abilities": [
         "shed-skin",
@@ -7113,7 +7113,7 @@
     {
       "height": 40,
       "weight": 165,
-      "id": 201,
+      "order": 201,
       "name": "dragonair",
       "abilities": [
         "shed-skin",
@@ -7166,7 +7166,7 @@
     {
       "height": 22,
       "weight": 2100,
-      "id": 202,
+      "order": 202,
       "name": "dragonite",
       "abilities": [
         "inner-focus",
@@ -7221,7 +7221,7 @@
     {
       "height": 20,
       "weight": 1220,
-      "id": 203,
+      "order": 203,
       "name": "mewtwo",
       "abilities": [
         "pressure",
@@ -7276,7 +7276,7 @@
     {
       "height": 4,
       "weight": 40,
-      "id": 206,
+      "order": 206,
       "name": "mew",
       "abilities": [
         "synchronize"

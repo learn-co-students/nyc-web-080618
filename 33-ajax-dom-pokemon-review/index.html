@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Find all the Pokemons</title>
+    <script type="text/javascript" src="src/pokemonClass.js"></script>
+    <script type="text/javascript" src="src/eventHandlers.js"></script>
     <script type="text/javascript" src="src/index.js"></script>
 
     <style media="screen">
@@ -57,9 +59,14 @@
     <div id="container">
       <img id="pokemon-logo" src="images/pokemon.png" alt="">
       <center>
-        <form id="new-pokemon-form">
+        <!-- HTML forms will try to POST to whatever action is specified
+      if no action is provided, form will POST to our current url
+     -->
+        <form id="new-pokemon-form" action="is_a_hotdog_a_sandwich">
           <p>Create a new Pokemon:</p>
+          <label for="name-input">Name: </label>
           <input id="name-input" type="text" placeholder="Name"></input>
+          <label for="sprite-input">Sprite: </label>
           <input id="sprite-input" type="text" placeholder="Sprite URL"></input>
           <input id="submit" type="submit">
         </form>
