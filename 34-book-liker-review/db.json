@@ -13,26 +13,6 @@
         {
           "id": 8,
           "username": "goodwin"
-        },
-        {
-          "id": 1,
-          "username": "pouros"
-        },
-        {
-          "id": 1,
-          "username": "pouros"
-        },
-        {
-          "id": 1,
-          "username": "pouros"
-        },
-        {
-          "id": 1,
-          "username": "pouros"
-        },
-        {
-          "id": 1,
-          "username": "pouros"
         }
       ]
     },
@@ -53,22 +33,6 @@
         {
           "id": 6,
           "username": "steuber"
-        },
-        {
-          "id": 1,
-          "username": "pouros"
-        },
-        {
-          "id": 1,
-          "username": "pouros"
-        },
-        {
-          "id": 1,
-          "username": "pouros"
-        },
-        {
-          "id": 1,
-          "username": "pouros"
         }
       ]
     },
@@ -173,10 +137,6 @@
         {
           "id": 2,
           "username": "auer"
-        },
-        {
-          "id": 1,
-          "username": "pouros"
         }
       ]
     },
@@ -185,7 +145,7 @@
       "title": "Rocky Mountain Pursuit",
       "description": "IDENTITY: CONFIDENTIAL Everyone believes agent Jase Bradford is dead--everyone but Reyna Peterson. Only he can protect her now that someone wants the information her CIA husband died to secure. As the one member of their spy team not killed, Jase must remain in the shadows. Yet when Reyna leads the enemy right to his mountain refuge and blows his cover, Jase risks his life for hers. As his best friend's beautiful widow scales the walls around his heart, whether out of loyalty or love, he makes it his duty to secure her safety. But when their pursuers trap them in the snowy Colorado mountains, will it become his final mission?",
       "img_url": "http://books.google.com/books/content?id=hmbACwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "books": [
+      "users": [
         {
           "id": 8,
           "username": "goodwin"
@@ -205,7 +165,7 @@
       "title": "The Lottery Winner",
       "description": "Five short tales, including 'Plumbing for Willy' and 'Death on the Cape,' follow the adventures of a former cleaning woman and her occasionally befuddled mate",
       "img_url": "http://books.google.com/books/content?id=dK5Gx6vbV2YC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "books": [
+      "users": [
         {
           "id": 8,
           "username": "goodwin"
