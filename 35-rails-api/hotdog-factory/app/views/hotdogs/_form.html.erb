@@ -1,0 +1,27 @@
+<%= form_with(model: hotdog, local: true) do |form| %>
+  <% if hotdog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hotdog.errors.count, "error") %> prohibited this hotdog from being saved:</h2>
+
+      <ul>
+      <% hotdog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ingredients %>
+    <%= form.text_field :ingredients %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

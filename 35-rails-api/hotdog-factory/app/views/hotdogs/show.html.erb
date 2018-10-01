@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hotdog.name %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @hotdog.ingredients %>
+</p>
+
+<%= link_to 'Edit', edit_hotdog_path(@hotdog) %> |
+<%= link_to 'Back', hotdogs_path %>

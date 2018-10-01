@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hotdogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ingredients</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hotdogs.each do |hotdog| %>
+      <tr>
+        <td><%= hotdog.name %></td>
+        <td><%= hotdog.ingredients %></td>
+        <td><%= link_to 'Show', hotdog %></td>
+        <td><%= link_to 'Edit', edit_hotdog_path(hotdog) %></td>
+        <td><%= link_to 'Destroy', hotdog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hotdog', new_hotdog_path %>
