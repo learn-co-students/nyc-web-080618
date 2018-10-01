@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code Orgainzation Feat. Pokemon</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- js files -->
+    <script type="text/javascript" src="src/index.js"></script>
+
+  </head>
+  <body>
+    <div id="container">
+      <img id="pokemon-logo" src="images/pokemon.png" alt="">
+      <center>
+        <!-- HTML forms will try to POST to whatever action is specified
+      if no action is provided, form will POST to our current url
+     -->
+        <form id="new-pokemon-form" action="is_a_hotdog_a_sandwich">
+          <p>Create a new Pokemon:</p>
+          <label for="name-input">Name: </label>
+          <input id="name-input" type="text" placeholder="Name"></input>
+          <label for="sprite-input">Sprite: </label>
+          <input id="sprite-input" type="text" placeholder="Sprite URL"></input>
+          <input id="submit" type="submit">
+        </form>
+        <hr>
+        <form id="pokemon-search-form" class="" action="" method="">
+          <input id="pokemon-search-input" type="text" name="" value="">
+        </form>
+      </center>
+
+      <div id="pokemon-container">
+        <p><center>There are no Pokémon here</center></p>
+      </div>
+    </div>
+  </body>
+</html>
