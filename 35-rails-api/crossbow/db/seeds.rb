@@ -5,10 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-Hotdog.create([
-  { name: 'plain', ingredients: 'just a hotdog, no bun'},
-  { name: 'ketchup', ingredients: 'just ketchup' },
-  { name: 'The Destroyer', ingredients: 'a whole cube of cheddar cheese, and 1/2 lb of chilli' },
-  { name: 'flavortown specialty', ingredients: 'nachos, an entire deep dish meat lovers pizza, all inside a monster sized hotdog bun' }
-])
