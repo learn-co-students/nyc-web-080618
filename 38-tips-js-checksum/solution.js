@@ -13,8 +13,8 @@ const data = [
 // i need to return the sum of all differences between these elements
 
 /****************************** WITH ARRAY.PROTOTYPE.REDUCE ***********************************************/
-
-const reduceChecksum = nestedData => {
+// more verbose
+const reduceChecksumLong = nestedData => {
   return nestedData.reduce((sum, innerArr) => {
     // const max = Math.max.apply(null, innerArr)
     const max = Math.max(...innerArr)
@@ -26,11 +26,24 @@ const reduceChecksum = nestedData => {
   }, 0)
 }
 
+console.log(reduceChecksumLong(data))
+
+// more concise
+const reduceChecksumShort = nestedData => {
+  return nestedData.reduce((sum, innerArr) => {
+    return (sum += Math.max(...innerArr) - Math.min(...innerArr))
+  }, 0)
+}
+
+console.log(reduceChecksumShort(data))
+
 /****************************** WITH ARRAY.PROTOTYPE.REDUCE ***********************************************/
+
+const calculateArrDiff = (sum, arr) => (sum += Math.max(...arr) - Math.min(...arr))
 
 const reduceChecksumRefactor = nestedData => nestedData.reduce(calculateArrDiff, 0)
 
-const calculateArrDiff = (sum, arr) => (sum += Math.max(...arr) - Math.min(...arr))
+console.log(reduceChecksumRefactor(data))
 
 /******************************* FUNCTIONAL APPROACH ******************************************************/
 
@@ -39,28 +52,30 @@ const sortArr = arr => arr.sort((a, b) => a - b)
 // find largest val from sorted arr
 const findMaxFromSortedArr = arr => sortArr(arr)[arr.length - 1]
 // find smallest val from sorted arr
-const findMin = arr => sortArr(arr)[0]
+const findMinFromSortedArr = arr => sortArr(arr)[0]
 
-const checksumFunctional = nestedData => {
+const calculateMaxMinFromArr = arr => findMaxFromSortedArr(arr) - findMinFromSortedArr(arr)
+
+const checksumFunctionalForEach = nestedData => {
   let total = 0
   nestedData.forEach(innerArr => {
     const largest = findMaxFromSortedArr(innerArr)
-    const smallest = findMin(innerArr)
+    const smallest = findMinFromSortedArr(innerArr)
     const difference = largest - smallest
     total += difference
   })
   return total
 }
 
-console.log(checksumFunctional(data))
+console.log(checksumFunctionalForEach(data))
 
 const checksumFunctionalReduce = nestedData => {
   return nestedData.reduce((sum, innerArr) => {
-    sum += findMaxFromSortedArr(innerArr) - findMin(innerArr)
+    return (sum += findMaxFromSortedArr(innerArr) - findMinFromSortedArr(innerArr))
   }, 0)
 }
 
-console.log(checksumFunctional(data))
+console.log(checksumFunctionalReduce(data))
 
 /************************* NESTED LOOP/ BRUTE FORCE APPROACH *********************************************/
 
@@ -97,6 +112,7 @@ const mapSortChecksum = nestedData => {
 
 console.log(mapSortChecksum(data))
 
+// don't do this on one line
 const mapSortChecksumImpossibleToReadOneLine = nestedData =>
   nestedData
     .map(innerArr => innerArr.sort((curr, next) => curr - next))
