@@ -112,7 +112,6 @@ const mapSortChecksum = nestedData => {
 
 console.log(mapSortChecksum(data))
 
-// don't do this on one line
 const mapSortChecksumImpossibleToReadOneLine = nestedData =>
   nestedData
     .map(innerArr => innerArr.sort((curr, next) => curr - next))
