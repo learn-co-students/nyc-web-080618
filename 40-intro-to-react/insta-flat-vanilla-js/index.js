@@ -1,0 +1,23 @@
+// Find reference to container
+const container = document.getElementById("container");
+
+// Create a header
+const header = document.createElement('H1')
+console.log(header);
+header.innerText = "flatStaGram"
+
+// Add header to container
+container.appendChild(header);
+
+// I will think about this later
+images.forEach( function(imgSrc) {
+    // Create an img element
+    const img = document.createElement('img')
+
+    // Update img src attribute
+    img.src = imgSrc;
+
+    // Append img element to container
+    container.appendChild(img)
+    console.log(imgSrc)
+} )
