@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const UserStats = ({ users }) => {
+  console.log('%c users', 'color: blue', users);
   const total = users.length;
   const cats = users.filter(user => user.animalPreference === 'cats').length;
   const dogs = users.filter(user => user.animalPreference === 'dogs').length;
@@ -27,8 +28,10 @@ const UserStats = ({ users }) => {
 }
 
 function mapStateToProps(state) {
+  console.log('%c mapStateToProps', 'color: blue', state);
+
   return {
-    users: state.users
+    users: state.user.users
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUserAction } from '../redux/actions';
+import { addUser } from '../redux/actions';
 
 class AddUserForm extends Component {
   state = {
@@ -39,7 +39,7 @@ class AddUserForm extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addUser: (name, email, animalPreference) => dispatch(addUserAction(name, email, animalPreference))
+    addUser: (name, email, animalPreference) => dispatch(addUser(name, email, animalPreference))
   }
 }
 

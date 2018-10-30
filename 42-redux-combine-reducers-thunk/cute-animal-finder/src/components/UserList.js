@@ -26,7 +26,7 @@ const UserList = ({ users }) => {
 
 function mapStateToProps(state) {
   return {
-    users: state.users
+    users: state.user.users
   }
 }
 
