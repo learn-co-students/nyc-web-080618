@@ -12,7 +12,7 @@ import App from './App'
 import usersReducer from './reducers/usersReducer' //TODO: move
 import registerServiceWorker from './registerServiceWorker'
 
-const rootReducer = combineReducers({ usersReducer: usersReducer }) //TODO: move this too
+const rootReducer = combineReducers({ usersReducer /*: usersReducer*/ }) //TODO: move this too
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk))) //TODO: move this
 

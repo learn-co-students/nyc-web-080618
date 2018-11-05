@@ -8,11 +8,12 @@ import { Button, Form, Segment, Message } from 'semantic-ui-react'
 class LoginForm extends React.Component {
   state = { username: '', password: '' }
 
-  // handleChange = (e, { name, value }) => this.setState({ [name]: value })
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
-  handleChange = (e, semanticInputData) => {
-    this.setState({ [semanticInputData.name]: semanticInputData.value })
-  }
+  // handleChange = (e, semanticInputData) => {
+  //   // semanticInputData.name -> 'username'
+  //   this.setState({ [semanticInputData.name]: semanticInputData.value })
+  // }
 
   handleLoginSubmit = () => { //semantic forms preventDefault for you
     this.props.loginUser(this.state.username, this.state.password) //comes from mapDispatchToProps
@@ -20,6 +21,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    console.log('%c PROPS IN LOGINFORM ', 'color: goldenrod', this.props)
     return this.props.loggedIn ? (
       <Redirect to="/profile" />
     ) : (
@@ -56,13 +58,6 @@ class LoginForm extends React.Component {
   }
 }
 
-// const mapStateToProps = ({ usersReducer: { authenticatingUser, failedLogin, error, user, loggedIn } }) => ({
-//   authenticatingUser,
-//   failedLogin,
-//   error,
-//   user,
-//   loggedIn
-// })
 
 // const mapStateToProps = (reduxStoreState) => {
 //   return {
@@ -73,6 +68,7 @@ class LoginForm extends React.Component {
 //   }
 // }
 
+// which pieces of the reduxStoreState does this component care about????
 const mapStateToProps = ({ usersReducer: { authenticatingUser, failedLogin, error, loggedIn } }) => ({
   authenticatingUser,
   failedLogin,
@@ -80,7 +76,7 @@ const mapStateToProps = ({ usersReducer: { authenticatingUser, failedLogin, erro
   loggedIn
 })
 
-
+// gives my component props (callback fns) that allow it to dispatch (SEND) actions to redux. these actions are then handled by my reducers
 // const mapDispatchToProps = (dispatch) => {
 //   return {
 //     loginUser: (username, password) => dispatch(loginUser(username, password))

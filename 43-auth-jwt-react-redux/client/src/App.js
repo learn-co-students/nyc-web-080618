@@ -13,7 +13,6 @@ const App = props => {
       <Nav />
       <Switch>
         <Route exact path="/" render={() => <Redirect to="/profile" />} />
-
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/login" component={LoginForm} />
         <Route component={NotFound} />

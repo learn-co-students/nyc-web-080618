@@ -5,6 +5,7 @@ import { Redirect } from 'react-router'
 import { fetchCurrentUser } from '../actions/user'
 import { Loader } from 'semantic-ui-react'
 
+// in this example, WrappedComponent is the Profile component
 const withAuth = /*FUNCTION*/ (WrappedComponent) => {
   class AuthorizedComponent extends React.Component {
     componentDidMount() {
@@ -14,8 +15,9 @@ const withAuth = /*FUNCTION*/ (WrappedComponent) => {
     }
 
     render() {
+      console.log('%c PROPS IN WITHAUTH HOC ', 'color: green', this.props)
       if (localStorage.getItem('jwt') && this.props.loggedIn) {
-        //i have a token and i'm logged in
+        //i have a token and i'm logged in according to redux
         // wrapped component in our case is Profile
         return <WrappedComponent />
       } else if (localStorage.getItem('jwt') && this.props.authenticatingUser) {
@@ -45,10 +47,7 @@ const withAuth = /*FUNCTION*/ (WrappedComponent) => {
   // const connectedAuthorizedComponent = connectedToReduxHOC(AuthorizedComponent)
   // return connectedAuthorizedComponent
 
-  return connect(
-    mapStateToProps,
-    { fetchCurrentUser }
-  )(AuthorizedComponent)
+  return connect(mapStateToProps, { fetchCurrentUser })(AuthorizedComponent)
 }
 
 export default withAuth
